@@ -705,6 +705,7 @@
     addHorizontalMotion(delta / slideDistance(), 155);
   }, { passive: false });
 
+  /* BLOG READER CLICK / DEFER POINTER CAPTURE FIX V1 */
   viewport.addEventListener("pointerdown", event => {
     if (event.pointerType === "mouse" && event.button !== 0) return;
     if (event.target.closest?.("button, [data-blog-motion-toggle]")) return;
@@ -714,7 +715,6 @@
     pointerLastTime = performance.now();
     pointerVelocity = 0;
     pointerDidDrag = false;
-    try { viewport.setPointerCapture(event.pointerId); } catch (_) {}
   });
 
   viewport.addEventListener("pointermove", event => {
@@ -724,6 +724,9 @@
     if (!pointerDidDrag && Math.abs(dxFromStart) > DRAG_START_PX && Math.abs(dxFromStart) > Math.abs(dyFromStart) * 1.12) {
       pointerDidDrag = true;
       carousel.dataset.dragging = "true";
+      // Capture only after this gesture is known to be a horizontal drag. A normal
+      // click on an article card must retain its anchor target so the reader can open.
+      try { viewport.setPointerCapture(event.pointerId); } catch (_) {}
     }
     const now = performance.now();
     if (pointerDidDrag) {
