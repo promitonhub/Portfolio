@@ -25,6 +25,7 @@
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/section-grid-background.js" defer></script>
   <script src="assets/js/case-overlay.js" defer></script>
+  <script src="assets/js/blog-carousel.js" defer></script>
   <script src="assets/js/contact-card-motion.js" defer></script>
 
 
@@ -452,19 +453,55 @@
     <section class="blog section-block" id="blog" data-section="04" aria-labelledby="blog-title">
       <div class="section-grid-base" aria-hidden="true"></div>
       <div class="section-grid-matte" aria-hidden="true"></div>
-      <div class="section-bar"><span>04 / BLOG</span><span>NOTES FROM THE WORK</span><span>FIELD NOTES — 00</span></div>
-      <div class="blog-inner section-inner">
-        <div class="blog-heading" data-reveal>
+      <div class="section-bar"><span>04 / BLOG</span><span>FIELD NOTES / ORIGINAL WRITING</span><span>POST INDEX — 00</span></div>
+      <div class="blog-heading section-inner" data-reveal>
+        <div class="blog-heading-copy">
           <p class="kicker">FIELD NOTES / IDEAS / PRACTICE</p>
-          <h2 id="blog-title">Writing for the <em>work behind the work.</em></h2>
-          <p>Practical notes on demand generation, research, content operations and pre-sales. New posts will appear here.</p>
+          <h2 id="blog-title">Thoughts from <em>the work behind the work.</em></h2>
+          <p>Original notes on B2B demand generation, account research, content systems and pre-sales. New writing will appear here as it is published.</p>
         </div>
-        <div class="blog-empty" data-reveal role="status" aria-live="polite">
-          <span class="blog-empty-index">POST INDEX / 00</span>
-          <span class="blog-empty-mark" aria-hidden="true">P.</span>
-          <h3>Nothing published yet.</h3>
-          <p>This space is reserved for original articles and field notes.</p>
-          <span class="blog-empty-rule" aria-hidden="true"></span>
+        <span class="blog-heading-index" aria-hidden="true"><b>PM</b><small>NOTES<br>IN MOTION</small><i>↗</i></span>
+      </div>
+      <div class="blog-carousel" data-blog-carousel data-state="empty" data-inview="true" role="region" aria-label="Blog posts carousel">
+        <div class="blog-carousel-viewport" data-blog-viewport tabindex="0" aria-label="Published blog posts; use horizontal scrolling to explore">
+          <div class="blog-carousel-track" data-blog-track>
+            <div class="blog-carousel-group" data-blog-group>
+              <!-- BLOG POST TEMPLATE — replace this comment with real post cards as you publish them.
+              <article class="blog-card" data-blog-post>
+                <a class="blog-card-link" href="blog/your-post.html">
+                  <div class="blog-card-media">
+                    <img src="assets/images/blog/your-image.jpg" alt="Specific description of the image">
+                    <span class="blog-card-media-index">FIELD NOTE / 01</span>
+                    <span class="blog-card-category">ACCOUNT RESEARCH</span>
+                  </div>
+                  <div class="blog-card-body">
+                    <div class="blog-card-meta"><span>2026-10-17</span><span>5 MIN READ</span></div>
+                    <h3>Your descriptive article title</h3>
+                    <p>A specific, useful summary of the article.</p>
+                    <div class="blog-card-foot"><span>BY PROMIT MITRA</span><span class="blog-card-arrow" aria-hidden="true">↗</span></div>
+                  </div>
+                </a>
+              </article>
+              Keep links pointed to actual published articles; do not publish placeholder titles. -->
+            </div>
+          </div>
+        </div>
+        <article class="blog-empty-card" data-blog-empty aria-labelledby="blog-empty-title">
+          <header class="blog-card-media blog-empty-media">
+            <span class="blog-card-media-index">FIELD NOTES / 00</span>
+            <div class="blog-empty-art" aria-hidden="true"><span class="blog-empty-art-word">WRITE</span><em>soon.</em><i></i><b>IDEAS → USEFUL WORK</b></div>
+            <span class="blog-card-category">EDITORIAL ARCHIVE / IN PREPARATION</span>
+          </header>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span>POST INDEX / 00</span><span>NOT PUBLISHED</span></div>
+            <h3 id="blog-empty-title">The first field note is being prepared.</h3>
+            <p>This archive is ready for original articles. No sample posts or placeholder articles have been published.</p>
+            <div class="blog-card-foot"><span>BY PROMIT MITRA</span><span class="blog-card-arrow" aria-hidden="true">↗</span></div>
+          </div>
+        </article>
+        <div class="blog-carousel-bottom section-inner">
+          <p class="blog-carousel-status" data-blog-status role="status" aria-live="polite">POST INDEX / 00 <span>—</span> NO ARTICLES PUBLISHED YET</p>
+          <button class="blog-motion-toggle" data-blog-motion-toggle type="button" aria-pressed="false" aria-label="Pause automatic blog scrolling" hidden>PAUSE MOTION <span aria-hidden="true">Ⅱ</span></button>
         </div>
       </div>
     </section>
