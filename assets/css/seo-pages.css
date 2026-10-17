@@ -53,3 +53,13 @@
   .profile-practice-grid article { padding: 18px; }
   .profile-practice-grid article + article { border-left: 0; border-top: 1px solid var(--line); }
 }
+
+
+/* PORTFOLIO PROFILE OVERLAY MODE */
+.profile-in-overlay body > .site-header,
+.profile-in-overlay body > .site-footer,
+.profile-in-overlay body > .skip-link,
+.profile-in-overlay .profile-breadcrumb { display: none !important; }
+.profile-in-overlay .profile-page { padding-top: clamp(22px, 3.5vw, 42px); }
+.profile-in-overlay .profile-hero { padding-top: clamp(30px, 5vw, 58px); }
+.profile-in-overlay body { overflow-x: hidden; }

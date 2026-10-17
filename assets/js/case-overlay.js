@@ -12,6 +12,7 @@
   const loadingLabel = document.getElementById('case-overlay-loading-label');
   const work = document.getElementById('work');
   const cvTrigger = document.querySelector('[data-open-cv]');
+  const profileTrigger = document.querySelector('[data-open-profile]');
   if (!overlay || !panel || !closeButton || !titleEl || !indexEl || !fullPageLink || !savePdfLink || !stage || !frame || !work) return;
 
   const cases = {
@@ -63,14 +64,27 @@
             closeOverlay();
           }
         });
-        innerDoc.querySelectorAll('a[href="../index.html"], a[href="../index.html#work"], a[href="../index.html#about"]').forEach(link => {
-          link.addEventListener('click', event => {
-            const href = new URL(link.href, frame.src);
-            if (href.origin === window.location.origin && href.pathname.endsWith('/index.html')) {
-              event.preventDefault();
-              closeOverlay();
+        innerDoc.addEventListener('click', event => {
+          const link = event.target.closest?.('a[href]');
+          if (!link) return;
+          const href = new URL(link.href, frame.src);
+          if (href.origin !== window.location.origin) return;
+          if (href.pathname.endsWith('/cv.html') && overlay.dataset.contentType === 'profile') {
+            event.preventDefault();
+            openDocument(href.href, lastTrigger, 'cv');
+            return;
+          }
+          if (href.pathname === '/' || href.pathname.endsWith('/index.html')) {
+            event.preventDefault();
+            closeOverlay();
+            if (href.hash) {
+              history.replaceState(null, '', href.hash);
+              requestAnimationFrame(() => document.querySelector(href.hash)?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }));
+            } else {
+              history.replaceState(null, '', window.location.pathname + window.location.search);
+              window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
             }
-          });
+          }
         });
       } catch (_) {
         // Full-page navigation remains available for non-same-origin preview environments.
@@ -82,7 +96,8 @@
     const target = new URL(url, window.location.href);
     const validCase = target.origin === window.location.origin && target.pathname.includes('/case-studies/');
     const validCv = target.origin === window.location.origin && target.pathname.endsWith('/cv.html');
-    if ((kind === 'case' && !validCase) || (kind === 'cv' && !validCv)) {
+    const validProfile = target.origin === window.location.origin && target.pathname.endsWith('/about.html');
+    if ((kind === 'case' && !validCase) || (kind === 'cv' && !validCv) || (kind === 'profile' && !validProfile)) {
       window.location.href = target.href;
       return;
     }
@@ -105,6 +120,16 @@
       savePdfLink.hidden = false;
       loadingLabel.textContent = 'Preparing curriculum vitae';
       frame.title = 'Curriculum vitae of Promit Mitra';
+    } else if (kind === 'profile') {
+      titleEl.textContent = 'Full Professional Profile';
+      indexEl.textContent = 'PROFILE / ABOUT';
+      confidentialEl.textContent = 'PROFESSIONAL OVERVIEW';
+      fullPageLink.href = target.pathname;
+      fullPageLink.textContent = 'OPEN PROFILE PAGE ↗';
+      fullPageLink.setAttribute('aria-label', 'Open the professional profile as a full page');
+      savePdfLink.hidden = true;
+      loadingLabel.textContent = 'Preparing professional profile';
+      frame.title = 'Full professional profile of Promit Mitra';
     } else {
       const record = caseRecord(target.href);
       titleEl.textContent = record.title;
@@ -175,6 +200,12 @@
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     openDocument(new URL('cv.html', window.location.href).href, cvTrigger, 'cv');
+  });
+
+  profileTrigger?.addEventListener('click', event => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    openDocument(new URL('about.html', window.location.href).href, profileTrigger, 'profile');
   });
 
   frame.addEventListener('load', () => finishFrameLoad(loadGeneration));
