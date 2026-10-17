@@ -8,6 +8,8 @@
   const heading = document.querySelector(".hero-title-dissolve");
   const output = heading?.querySelector(".ascii-dissolve-output");
   if (!heading || !output) return;
+  const mobileStaticTitle = window.matchMedia("(max-width: 700px)").matches;
+  if (mobileStaticTitle) return; // Mobile CSS deliberately uses the immediate static wordmark.
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reducedMotion) return; // Delayed CSS fade brings in the static wordmark fallback.
