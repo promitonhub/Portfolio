@@ -1,0 +1,14 @@
+/* Styles active only while a case study is embedded in the Selected Work overlay. */
+html.case-in-overlay { zoom: 1 !important; overflow-x: hidden !important; }
+html.case-in-overlay, html.case-in-overlay body { min-width: 0 !important; background: var(--bg, #0b0c0d) !important; }
+html.case-in-overlay body { overflow-x: hidden !important; }
+html.case-in-overlay .scroll-progress,
+html.case-in-overlay .scroll-rail,
+html.case-in-overlay .case-nav,
+html.case-in-overlay .skip-link,
+html.case-in-overlay .case-bottom-nav,
+html.case-in-overlay .case-footer { display: none !important; }
+html.case-in-overlay .case-shell { width: 100% !important; max-width: none !important; padding: 0 !important; margin: 0 !important; }
+html.case-in-overlay .case-hero { padding-top: clamp(36px, 5vw, 66px) !important; }
+html.case-in-overlay .case-hero:after { pointer-events: none; }
+html.case-in-overlay .case-content-section { scroll-margin-top: 16px; }

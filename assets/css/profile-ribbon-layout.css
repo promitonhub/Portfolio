@@ -1,0 +1,180 @@
+/* Profile compacting + hero-integrated high-visibility expertise ticker. */
+:root {
+  --hero-ribbon-height: clamp(58px, 6.8vh, 72px);
+}
+
+/* Keep the ticker in the sticky hero scene so it fills the otherwise unused lower band. */
+.hero-stage > .ticker-band {
+  position: absolute;
+  z-index: 6;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  height: var(--hero-ribbon-height);
+  overflow: hidden;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line-strong));
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 7%, transparent), transparent 26%, transparent 74%, color-mix(in srgb, var(--blue) 7%, transparent)),
+    color-mix(in srgb, var(--panel-2) 96%, transparent);
+  box-shadow: 0 -12px 35px rgba(0, 0, 0, .18);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.hero-stage > .ticker-band::before,
+.hero-stage > .ticker-band::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: clamp(24px, 4vw, 56px);
+  pointer-events: none;
+}
+.hero-stage > .ticker-band::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--panel-2), transparent);
+}
+.hero-stage > .ticker-band::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--panel-2), transparent);
+}
+.hero-stage > .ticker-band .ticker-track {
+  align-items: center;
+  height: 100%;
+}
+.hero-stage > .ticker-band .ticker-group {
+  gap: clamp(18px, 2vw, 32px);
+  padding-inline: clamp(12px, 1.7vw, 25px);
+}
+.hero-stage > .ticker-band .ticker-group span {
+  padding: 0;
+  color: color-mix(in srgb, var(--ink) 82%, var(--muted));
+  font-size: clamp(11px, .82vw, 13px);
+  font-weight: 500;
+  letter-spacing: .14em;
+  line-height: 1;
+}
+.hero-stage > .ticker-band .ticker-group b {
+  color: var(--accent);
+  font-size: clamp(15px, 1.1vw, 18px);
+  line-height: 1;
+  text-shadow: 0 0 12px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.hero-stage > .ticker-band:hover .ticker-track { animation-play-state: paused; }
+
+/* Keep the footer metadata above the ribbon instead of allowing it to overlap. */
+.hero-bottom {
+  bottom: calc(var(--hero-ribbon-height) + 12px) !important;
+}
+.hero-coordinate {
+  bottom: calc(var(--hero-ribbon-height) + 46px) !important;
+}
+
+/* The profile's longer copy now uses the wide canvas, reducing needless vertical height. */
+.about-layout {
+  max-width: min(calc(100% - 2 * var(--page-gutter)), 1380px) !important;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr) !important;
+  column-gap: clamp(38px, 5vw, 76px) !important;
+  row-gap: clamp(28px, 3vw, 42px) !important;
+  padding-top: clamp(72px, 7.2vw, 108px) !important;
+  padding-bottom: clamp(56px, 5.5vw, 78px) !important;
+}
+.about-title h2 {
+  max-width: 100%;
+  font-size: clamp(46px, 4.6vw, 70px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -.06em !important;
+  text-wrap: balance;
+}
+.about-title h2 em {
+  display: inline !important;
+  font-size: 1.03em !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.035em !important;
+  padding-bottom: .05em !important;
+  white-space: normal;
+}
+.about-copy {
+  max-width: none !important;
+  min-width: 0;
+  padding-top: clamp(18px, 1.8vw, 28px) !important;
+}
+.about-copy p {
+  font-size: clamp(14.5px, .98vw, 16px) !important;
+  line-height: 1.68 !important;
+  margin-bottom: 14px !important;
+}
+.about-copy .about-lede {
+  max-width: 100%;
+  font-size: clamp(21px, 1.7vw, 27px) !important;
+  line-height: 1.38 !important;
+  margin-bottom: 16px !important;
+}
+.about-copy .quiet-copy {
+  margin-top: 17px !important;
+  padding-left: 13px;
+}
+.about-facts div {
+  gap: 8px !important;
+  padding-top: 15px !important;
+  padding-bottom: 17px !important;
+}
+.about-facts div:not(:first-child) { padding-left: clamp(12px, 1.4vw, 22px) !important; }
+.about-facts span { font-size: 9px !important; }
+.about-facts b { font-size: clamp(13px, 1vw, 16px) !important; line-height: 1.35; }
+.scribble-note { right: 2%; bottom: -14px; }
+
+@media (max-width: 1180px) {
+  .about-layout {
+    column-gap: clamp(28px, 3.4vw, 44px) !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, .94fr) !important;
+  }
+  .about-title h2 { font-size: clamp(44px, 4.9vw, 58px) !important; }
+  .about-copy .about-lede { font-size: clamp(20px, 2vw, 24px) !important; }
+  .hero-stage > .ticker-band .ticker-group { gap: 18px; }
+}
+@media (max-width: 900px) {
+  :root { --hero-ribbon-height: 54px; }
+  .hero-bottom { bottom: calc(var(--hero-ribbon-height) + 10px) !important; }
+  .hero-coordinate { display: none !important; }
+  .hero-stage > .ticker-band .ticker-group { gap: 15px; padding-inline: 12px; }
+  .hero-stage > .ticker-band .ticker-group span { font-size: 10px; letter-spacing: .11em; }
+  .hero-stage > .ticker-band .ticker-group b { font-size: 14px; }
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .9fr) !important;
+    column-gap: 28px !important;
+    padding-top: 64px !important;
+    padding-bottom: 52px !important;
+  }
+  .about-title h2 { font-size: clamp(42px, 5vw, 50px) !important; }
+  .about-copy { padding-top: 15px !important; }
+  .about-copy p { font-size: 14px !important; }
+  .about-copy .about-lede { font-size: 19px !important; }
+  .about-facts b { font-size: 13px !important; }
+}
+@media (max-width: 700px) {
+  :root { --hero-ribbon-height: 48px; }
+  .hero-bottom { bottom: calc(var(--hero-ribbon-height) + 7px) !important; }
+  .hero-stage > .ticker-band { background: color-mix(in srgb, var(--panel-2) 97%, transparent); }
+  .hero-stage > .ticker-band .ticker-group { gap: 12px; padding-inline: 10px; }
+  .hero-stage > .ticker-band .ticker-group span { font-size: 9px; }
+  .hero-stage > .ticker-band .ticker-group b { font-size: 12px; }
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 26px !important;
+    padding-top: 64px !important;
+    padding-bottom: 50px !important;
+  }
+  .about-title h2 { font-size: clamp(42px, 10.5vw, 58px) !important; }
+  .about-copy { padding-top: 0 !important; max-width: 660px !important; }
+  .about-copy .about-lede { font-size: clamp(20px, 5vw, 24px) !important; }
+  .about-copy p { font-size: 14px !important; }
+  .about-facts { margin-top: 4px; }
+  .scribble-note { right: 0; bottom: -12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage > .ticker-band .ticker-track { animation: none !important; }
+}

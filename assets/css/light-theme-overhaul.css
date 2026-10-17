@@ -1,0 +1,570 @@
+/*
+  Light theme art direction: warm paper, deep graphite, botanical olive,
+  and muted blueprint blue. Dark mode remains controlled by the base tokens.
+*/
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f5f4ed;
+  --panel: #fbfaf5;
+  --panel-2: #e9e9df;
+  --ink: #20261f;
+  --muted: #566158;
+  --faint: #747d72;
+  --line: rgba(33, 42, 31, .14);
+  --line-strong: rgba(33, 42, 31, .28);
+  --accent: #536d13;
+  --blue: #315bb0;
+  --green: #3f7655;
+  --red: #a04a37;
+  --invert-bg: #20261f;
+  --invert-fg: #f8f7f0;
+  --ascii-ink: #fffdf5;
+  --ascii-alpha-base: .88;
+  --ascii-alpha-fade: .42;
+  --focus-ring: #315bb0;
+}
+
+html[data-theme="light"] body {
+  background: var(--bg);
+  color: var(--ink);
+}
+html[data-theme="light"] ::selection {
+  background: #dceaa5;
+  color: #1f2914;
+}
+html[data-theme="light"] a:focus-visible,
+html[data-theme="light"] button:focus-visible,
+html[data-theme="light"] [tabindex]:focus-visible {
+  outline-color: var(--focus-ring);
+}
+html[data-theme="light"] .site-header,
+html[data-theme="light"] .case-nav {
+  background: color-mix(in srgb, var(--bg) 91%, transparent);
+  border-color: var(--line-strong);
+  box-shadow: 0 5px 24px rgba(35, 43, 29, .035);
+}
+html[data-theme="light"] .wordmark,
+html[data-theme="light"] .nav-link,
+html[data-theme="light"] .theme-toggle,
+html[data-theme="light"] .menu-toggle {
+  color: var(--ink);
+}
+html[data-theme="light"] .nav-link { color: var(--muted); }
+html[data-theme="light"] .nav-link:hover,
+html[data-theme="light"] .nav-link.active { color: var(--ink); }
+html[data-theme="light"] .nav-contact,
+html[data-theme="light"] .button-invert,
+html[data-theme="light"] .featured-cta {
+  background: var(--invert-bg);
+  color: var(--invert-fg);
+  border-color: var(--invert-bg);
+}
+html[data-theme="light"] .theme-toggle:hover,
+html[data-theme="light"] .menu-toggle:hover {
+  background: var(--panel-2);
+  color: var(--ink);
+}
+html[data-theme="light"] .mobile-nav {
+  background: var(--panel);
+  box-shadow: 0 18px 32px rgba(31, 39, 29, .12);
+}
+html[data-theme="light"] .scroll-progress { background: var(--accent); }
+
+/* Instrument-like progress rail: blueprint blue, without a neon glow. */
+html[data-theme="light"] .rail-percent { color: #315bb0; }
+html[data-theme="light"] .rail-percent::before,
+html[data-theme="light"] .rail-fill {
+  background: #315bb0;
+  box-shadow: 0 0 4px rgba(49, 91, 176, .15);
+}
+html[data-theme="light"] .rail-thumb {
+  background: #315bb0;
+  box-shadow: 0 0 4px rgba(49, 91, 176, .16);
+}
+html[data-theme="light"] .rail-chapter.is-active { color: var(--ink); }
+
+/* Hero + ASCII portrait. The art becomes graphite/blue-grey over the paper surface. */
+html[data-theme="light"] .hero,
+html[data-theme="light"] .hero-stage,
+html[data-theme="light"] .hero-canvas {
+  background-color: var(--bg);
+}
+html[data-theme="light"] .hero-grid-lines {
+  opacity: .36 !important;
+  background-image:
+    linear-gradient(rgba(43, 56, 43, .085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 56, 43, .085) 1px, transparent 1px);
+}
+html[data-theme="light"] .hero-ascii-wrap {
+  background:
+    radial-gradient(ellipse at 52% 45%, rgba(49, 91, 176, .055), transparent 58%),
+    radial-gradient(ellipse at 54% 62%, rgba(63, 118, 85, .065), transparent 69%);
+}
+html[data-theme="light"] .hero-ascii-wrap::after {
+  background: linear-gradient(180deg, transparent, rgba(83, 109, 19, .05), transparent);
+}
+html[data-theme="light"] .hero-ascii-art,
+html[data-theme="light"] .ascii-particle {
+  color: var(--ascii-ink);
+  text-shadow: 0 0 10px rgba(91, 117, 128, .045);
+}
+html[data-theme="light"] .ascii-dissolve-output {
+  color: var(--ink);
+  text-shadow: 0 0 12px rgba(83, 109, 19, .08);
+}
+html[data-theme="light"] .hero-title-fallback { color: var(--ink); }
+html[data-theme="light"] .hero-subtitle em { color: #435d14; }
+html[data-theme="light"] .hero-bottom,
+html[data-theme="light"] .hero-coordinate,
+html[data-theme="light"] .hero-meta { color: var(--faint); }
+html[data-theme="light"] .hero-stage > .ticker-band {
+  background:
+    linear-gradient(90deg, rgba(83, 109, 19, .06), transparent 27%, transparent 73%, rgba(49, 91, 176, .055)),
+    color-mix(in srgb, var(--panel) 96%, transparent);
+  border-top-color: color-mix(in srgb, var(--accent) 28%, var(--line-strong));
+  border-bottom-color: var(--line-strong);
+  box-shadow: 0 -8px 22px rgba(35, 43, 29, .055);
+}
+html[data-theme="light"] .hero-stage > .ticker-band::before,
+html[data-theme="light"] .hero-stage > .ticker-band::after {
+  background: linear-gradient(90deg, var(--panel), transparent);
+}
+html[data-theme="light"] .hero-stage > .ticker-band::after {
+  background: linear-gradient(270deg, var(--panel), transparent);
+}
+
+/* Section canvases retain their texture, but the cursor cells become a muted sage. */
+html[data-theme="light"] .section-grid-base {
+  background-image:
+    linear-gradient(rgba(76, 96, 72, .09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 96, 72, .09) 1px, transparent 1px);
+  opacity: .56;
+}
+html[data-theme="light"] .section-grid-matte {
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--bg) 78%, transparent) 0%,
+      color-mix(in srgb, var(--bg) 45%, transparent) 16%,
+      transparent 35%,
+      color-mix(in srgb, var(--bg) 32%, transparent) 66%,
+      color-mix(in srgb, var(--bg) 80%, transparent) 100%),
+    radial-gradient(ellipse at center, transparent 22%, color-mix(in srgb, var(--bg) 46%, transparent) 100%);
+}
+html[data-theme="light"] .section-grid-canvas { opacity: .72; }
+
+/* Profile, Selected Work, Approach and Contact surfaces. */
+html[data-theme="light"] .about,
+html[data-theme="light"] .work,
+html[data-theme="light"] .approach,
+html[data-theme="light"] .contact,
+html[data-theme="light"] .site-footer {
+  background-color: var(--bg);
+  color: var(--ink);
+}
+html[data-theme="light"] .section-bar,
+html[data-theme="light"] .about-facts,
+html[data-theme="light"] .process-track,
+html[data-theme="light"] .site-footer {
+  border-color: var(--line);
+}
+html[data-theme="light"] .section-bar {
+  background: color-mix(in srgb, var(--panel) 90%, transparent);
+}
+html[data-theme="light"] .about-title h2 em,
+html[data-theme="light"] .work-heading h2 em,
+html[data-theme="light"] .approach-heading h2 em,
+html[data-theme="light"] .contact-giant em {
+  color: var(--accent);
+}
+html[data-theme="light"] .scribble-note,
+html[data-theme="light"] .about-copy .quiet-copy { color: var(--faint); }
+html[data-theme="light"] .approach-ghost {
+  color: color-mix(in srgb, var(--ink) 4%, transparent);
+}
+html[data-theme="light"] .contact-panel {
+  background: #f9f8f2;
+  border-color: rgba(32, 38, 31, .28);
+  box-shadow: 0 22px 68px rgba(37, 43, 31, .07);
+}
+html[data-theme="light"] .contact-grid {
+  background-image:
+    linear-gradient(rgba(45, 55, 41, .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 55, 41, .06) 1px, transparent 1px);
+}
+html[data-theme="light"] .contact-giant {
+  color: rgba(32, 38, 31, .055);
+}
+html[data-theme="light"] .contact-giant em { color: rgba(83, 109, 19, .13); }
+html[data-theme="light"] .contact-stamp {
+  background: rgba(251, 250, 245, .82);
+  border-color: var(--line-strong);
+}
+html[data-theme="light"] .contact-glow {
+  background: radial-gradient(
+    circle at var(--contact-glow-x, 50%) var(--contact-glow-y, 50%),
+    rgba(255, 255, 255, .7) 0,
+    rgba(174, 202, 91, .15) 25%,
+    transparent 64%
+  );
+}
+html[data-theme="light"] .contact-panel[data-reveal].is-tilting {
+  box-shadow: 0 20px 54px rgba(37, 43, 31, .12), inset 0 0 0 1px rgba(83, 109, 19, .10);
+}
+html[data-theme="light"] .contact-cv-link {
+  background: color-mix(in srgb, var(--panel) 90%, transparent);
+}
+html[data-theme="light"] .contact-cv-link:hover {
+  background: var(--accent);
+  color: #fffef7;
+}
+
+/* Cards and project art: bright paper surfaces around deliberate muted illustrations. */
+html[data-theme="light"] .project-card {
+  background: var(--panel);
+  border-color: var(--line-strong);
+  box-shadow: 0 8px 24px rgba(37, 43, 31, .025);
+}
+html[data-theme="light"] .project-card-head,
+html[data-theme="light"] .project-card-copy,
+html[data-theme="light"] .project-card-foot {
+  background-color: var(--panel);
+}
+html[data-theme="light"] .project-card:hover {
+  box-shadow: 0 14px 34px rgba(37, 43, 31, .07);
+}
+html[data-theme="light"] .project-art {
+  background-color: #e8e9df;
+  border-color: var(--line);
+}
+html[data-theme="light"] .research-art {
+  background: radial-gradient(ellipse at 64% 37%, rgba(83, 109, 19, .12), transparent 48%), #e9ebe2;
+}
+html[data-theme="light"] .research-grid {
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 31px, rgba(38, 50, 38, .14) 32px),
+    repeating-linear-gradient(to right, transparent 0 54px, rgba(38, 50, 38, .06) 55px);
+}
+html[data-theme="light"] .research-bars { border-bottom-color: var(--line-strong); }
+html[data-theme="light"] .research-orb { box-shadow: 0 0 28px rgba(83, 109, 19, .05); }
+html[data-theme="light"] .proposal-art,
+html[data-theme="light"] .brief-art {
+  background: radial-gradient(ellipse at 50% 35%, rgba(83, 109, 19, .10), transparent 54%), #eaebe2;
+}
+html[data-theme="light"] .proposal-paper {
+  background: #fffef8;
+  border-color: #b7bdad;
+  box-shadow: 12px 13px 0 rgba(83, 109, 19, .09);
+}
+html[data-theme="light"] .brief-canvas {
+  background: #faf9f3;
+  border-color: var(--line-strong);
+}
+html[data-theme="light"] .brief-label { background: rgba(255,255,255,.55); }
+html[data-theme="light"] .workflow-art {
+  background-color: #e8eae1;
+  background-image: radial-gradient(rgba(42, 56, 43, .12) .8px, transparent .8px);
+}
+html[data-theme="light"] .ops-console,
+html[data-theme="light"] .workflow-window {
+  background: rgba(251, 250, 245, .92);
+  box-shadow: 0 18px 38px rgba(36, 43, 31, .08);
+}
+html[data-theme="light"] .workflow-node,
+html[data-theme="light"] .ops-crm,
+html[data-theme="light"] .ops-channels > div {
+  background: var(--panel);
+  color: var(--ink);
+}
+html[data-theme="light"] .workflow-art .ops-top,
+html[data-theme="light"] .workflow-art .ops-footer { color: var(--faint); }
+html[data-theme="light"] .brand-art {
+  background: radial-gradient(ellipse at 25% 70%, rgba(83, 109, 19, .13), transparent 45%), linear-gradient(135deg, #e9ebe1, #f7f6ef);
+}
+html[data-theme="light"] .brand-frame { border-color: rgba(37, 47, 37, .24); }
+html[data-theme="light"] .brand-swatches i { border-color: rgba(37, 47, 37, .2); }
+html[data-theme="light"] .posm-art {
+  background: radial-gradient(ellipse at 20% 20%, rgba(83, 109, 19, .09), transparent 45%), #e9ebe2;
+}
+html[data-theme="light"] .posm-header { border-bottom-color: var(--line-strong); }
+html[data-theme="light"] .posm-store,
+html[data-theme="light"] .posm-list,
+html[data-theme="light"] .posm-calendar,
+html[data-theme="light"] .posm-store-card,
+html[data-theme="light"] .posm-asset-list {
+  background-color: rgba(251,250,245,.86);
+  border-color: var(--line-strong);
+}
+html[data-theme="light"] .home-system-map {
+  background-color: #eeeee5;
+  background-image: linear-gradient(rgba(41, 54, 40, .11) 1px, transparent 1px), linear-gradient(90deg, rgba(41, 54, 40, .11) 1px, transparent 1px);
+  border-color: var(--line-strong);
+}
+html[data-theme="light"] .home-map-node,
+html[data-theme="light"] .home-channel-row > div,
+html[data-theme="light"] .home-rfp-route {
+  background: rgba(251,250,245,.93);
+  border-color: var(--line);
+}
+html[data-theme="light"] .home-map-node.signal { border-top-color: #4a66a6; }
+html[data-theme="light"] .home-map-node.decide { border-top-color: #8270a8; }
+html[data-theme="light"] .home-map-node.handoff { border-top-color: #4d8464; }
+html[data-theme="light"] .home-rfp-route > span { color: #315bb0; }
+html[data-theme="light"] .home-crm-bar {
+  background: linear-gradient(90deg, rgba(83,109,19,.09), var(--panel));
+  border-color: color-mix(in srgb, var(--accent) 34%, var(--line));
+}
+html[data-theme="light"] .crm-pulse {
+  background: linear-gradient(90deg, transparent, rgba(83,109,19,.13), transparent);
+}
+html[data-theme="light"] .work-note { color: var(--muted); }
+
+/* Full case-study pages, including those displayed inside the overlay iframe. */
+html[data-theme="light"] .case-nav {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+}
+html[data-theme="light"] .case-hero {
+  background: radial-gradient(ellipse at 77% 30%, rgba(49,91,176,.06), transparent 38%), linear-gradient(180deg, var(--bg), var(--panel));
+}
+html[data-theme="light"] .case-hero::after {
+  border-color: rgba(49, 91, 176, .25);
+  box-shadow: 0 0 0 40px rgba(49,91,176,.025), 0 0 0 90px rgba(83,109,19,.018);
+}
+html[data-theme="light"] .case-system {
+  background: radial-gradient(ellipse at 85% 0%, rgba(49,91,176,.045), transparent 40%), linear-gradient(180deg, var(--panel), var(--bg));
+}
+html[data-theme="light"] .system-map-frame {
+  background-color: var(--bg);
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+}
+html[data-theme="light"] .system-signal-band,
+html[data-theme="light"] .system-stage,
+html[data-theme="light"] .system-channel,
+html[data-theme="light"] .system-outcome,
+html[data-theme="light"] .case-channel,
+html[data-theme="light"] .case-monitor-card {
+  background-color: rgba(251,250,245,.93);
+}
+html[data-theme="light"] .system-stage-glyph { background: #f0f0e7; }
+html[data-theme="light"] .system-channel:hover { background: color-mix(in srgb, var(--accent) 5%, var(--panel)); }
+html[data-theme="light"] .system-rfp-branch {
+  border-color: color-mix(in srgb, #315bb0 38%, var(--line));
+  background: linear-gradient(120deg, rgba(49,91,176,.055), transparent 80%), var(--bg);
+}
+html[data-theme="light"] .rfp-branch-title > span,
+html[data-theme="light"] .rfp-branch-steps b,
+html[data-theme="light"] .rfp-branch-steps > i,
+html[data-theme="light"] .rfp-branch-metric strong:last-of-type { color: #315bb0; }
+html[data-theme="light"] .glyph-monitor b { border-color: #315bb0; box-shadow: 0 0 0 7px rgba(49,91,176,.06); }
+html[data-theme="light"] .case-note { background: #eeeee5; }
+html[data-theme="light"] .case-tags span { background: rgba(251,250,245,.7); }
+html[data-theme="light"] .case-flow-item { background: transparent; }
+html[data-theme="light"] .case-system .system-crm-spine {
+  background: linear-gradient(90deg, rgba(83,109,19,.08), var(--panel));
+}
+
+/* Overlays use a softer neutral scrim in light mode, with a bright, clean document surface. */
+html[data-theme="light"] .case-overlay {
+  background: rgba(31, 38, 29, .24);
+  -webkit-backdrop-filter: blur(0) saturate(.98);
+  backdrop-filter: blur(0) saturate(.98);
+}
+html[data-theme="light"] .case-overlay.is-open {
+  background: rgba(31, 38, 29, .36);
+  -webkit-backdrop-filter: blur(17px) saturate(.82);
+  backdrop-filter: blur(17px) saturate(.82);
+}
+html[data-theme="light"] .case-overlay-panel {
+  background: var(--bg);
+  border-color: color-mix(in srgb, var(--accent) 24%, var(--line-strong));
+  box-shadow: 0 30px 90px rgba(32, 42, 28, .19), 0 0 0 1px rgba(255,255,255,.65) inset;
+}
+html[data-theme="light"] .case-overlay-header {
+  background: color-mix(in srgb, var(--panel) 97%, transparent);
+}
+html[data-theme="light"] .case-overlay-close {
+  background: rgba(32,38,31,.025);
+}
+html[data-theme="light"] .case-overlay-close:hover {
+  color: #fffef7;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+html[data-theme="light"] .case-overlay-loading {
+  background: linear-gradient(135deg, rgba(251,250,245,.98), rgba(239,239,230,.98));
+  color: var(--muted);
+}
+html[data-theme="light"] .case-loading-mark { color: var(--ink); }
+html[data-theme="light"] .case-overlay-save-pdf:hover {
+  background: var(--accent);
+  color: #fffef7;
+  border-color: var(--accent);
+}
+html[data-theme="light"] .case-overlay-save-pdf:hover span { color: #fffef7; }
+
+/* CV viewer: paper-on-paper in light mode, while preserving the original CV copy and layout. */
+html[data-theme="light"] {
+  --cv-paper: #fffef8;
+  --cv-ink: #20261f;
+  --cv-muted: #566158;
+  --cv-line: #d5d9ce;
+  --cv-accent: #d9e99a;
+  --cv-accent-dark: #536d13;
+  --cv-dark: #f5f4ed;
+}
+html[data-theme="light"] body:has(.cv-sheet) {
+  background: #ebeae2;
+  color: var(--ink);
+}
+html[data-theme="light"] .cv-sitebar { color: var(--muted); }
+html[data-theme="light"] .cv-download {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+html[data-theme="light"] .cv-download:hover { background: var(--accent); color: #fffef7; border-color: var(--accent); }
+html[data-theme="light"] .cv-sheet {
+  background: var(--cv-paper);
+  color: var(--cv-ink);
+  border-color: #d9dace;
+  box-shadow: 0 22px 70px rgba(35,43,29,.08);
+}
+html[data-theme="light"].cv-in-overlay body { background: var(--bg); }
+
+/* Ease the theme change itself without introducing a flash or moving layout geometry. */
+html[data-theme="light"] body,
+html[data-theme="light"] .site-header,
+html[data-theme="light"] .case-nav,
+html[data-theme="light"] .project-card,
+html[data-theme="light"] .case-overlay-panel,
+html[data-theme="light"] .contact-panel,
+html[data-theme="light"] .contact-cv-link {
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 220ms;
+  transition-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="light"] body,
+  html[data-theme="light"] .site-header,
+  html[data-theme="light"] .case-nav,
+  html[data-theme="light"] .project-card,
+  html[data-theme="light"] .case-overlay-panel,
+  html[data-theme="light"] .contact-panel,
+  html[data-theme="light"] .contact-cv-link { transition-duration: 0.01ms !important; }
+}
+
+/* Light-mode hero art direction: deep botanical olive, white-only foreground.
+   The rest of the site keeps its warm-paper palette. */
+html[data-theme="light"] .hero {
+  --bg: #35431f;
+  --panel: #3d4b26;
+  --panel-2: #46552d;
+  --ink: #fffdf5;
+  --muted: rgba(255, 253, 245, .82);
+  --faint: rgba(255, 253, 245, .62);
+  --line: rgba(255, 253, 245, .13);
+  --line-strong: rgba(255, 253, 245, .27);
+  --accent: #d9f36b;
+  --blue: #8aa6ec;
+  --green: #9bbf91;
+  --red: #c77f6f;
+  --invert-bg: #fffdf5;
+  --invert-fg: #2e3a1b;
+  color: #fffdf5;
+  background: #35431f;
+  border-bottom-color: rgba(255, 253, 245, .20);
+}
+html[data-theme="light"] .hero .hero-stage,
+html[data-theme="light"] .hero .hero-canvas {
+  background-color: #35431f !important;
+}
+html[data-theme="light"] .hero .hero-grid-lines {
+  opacity: .42 !important;
+  background-image:
+    linear-gradient(rgba(255, 253, 245, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 253, 245, .055) 1px, transparent 1px) !important;
+  mask-image: radial-gradient(ellipse at center, #000 0%, transparent 82%);
+}
+html[data-theme="light"] .hero .hero-ascii-wrap {
+  background:
+    radial-gradient(ellipse at 52% 45%, rgba(255, 253, 245, .055), transparent 58%),
+    radial-gradient(ellipse at 54% 62%, rgba(255, 253, 245, .035), transparent 69%) !important;
+}
+html[data-theme="light"] .hero .hero-ascii-wrap::before {
+  opacity: .16 !important;
+  background-image:
+    linear-gradient(rgba(255, 253, 245, .10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 253, 245, .10) 1px, transparent 1px) !important;
+}
+html[data-theme="light"] .hero .hero-ascii-wrap::after {
+  background: linear-gradient(180deg, transparent, rgba(217, 243, 107, .075), transparent) !important;
+}
+html[data-theme="light"] .hero .hero-ascii-art,
+html[data-theme="light"] .hero .ascii-particle,
+html[data-theme="light"] .hero .ascii-dissolve-output,
+html[data-theme="light"] .hero .hero-title-fallback,
+html[data-theme="light"] .hero .hero-title-dissolve .hero-period,
+html[data-theme="light"] .hero .hero-subtitle,
+html[data-theme="light"] .hero .hero-subtitle em,
+html[data-theme="light"] .hero .hero-lede,
+html[data-theme="light"] .hero .hero-center .kicker,
+html[data-theme="light"] .hero .hero-meta,
+html[data-theme="light"] .hero .hero-bottom,
+html[data-theme="light"] .hero .hero-bottom a,
+html[data-theme="light"] .hero .hero-coordinate {
+  color: #fffdf5 !important;
+}
+html[data-theme="light"] .hero .hero-ascii-art,
+html[data-theme="light"] .hero .ascii-particle {
+  opacity: .86;
+  text-shadow: 0 0 15px rgba(255, 253, 245, .075);
+}
+html[data-theme="light"] .hero .ascii-dissolve-output {
+  text-shadow: 0 0 14px rgba(255, 253, 245, .12) !important;
+}
+html[data-theme="light"] .hero .hero-title-fallback { text-shadow: 0 8px 42px rgba(0, 0, 0, .12); }
+html[data-theme="light"] .hero .live-dot,
+html[data-theme="light"] .hero .hero-meta i,
+html[data-theme="light"] .hero .hero-bottom b,
+html[data-theme="light"] .hero .scroll-arrow {
+  color: #d9f36b;
+}
+html[data-theme="light"] .hero .hero-ascii-footer,
+html[data-theme="light"] .hero .hero-ascii-label { color: rgba(255, 253, 245, .66); }
+html[data-theme="light"] .hero .button-invert {
+  background: #fffdf5 !important;
+  border-color: #fffdf5 !important;
+  color: #2e3a1b !important;
+}
+html[data-theme="light"] .hero .button-outline {
+  background: rgba(255, 253, 245, .035) !important;
+  border-color: rgba(255, 253, 245, .45) !important;
+  color: #fffdf5 !important;
+}
+html[data-theme="light"] .hero .button-outline:hover {
+  background: rgba(255, 253, 245, .11) !important;
+  border-color: #fffdf5 !important;
+}
+html[data-theme="light"] .hero .hero-stage > .ticker-band {
+  color: #fffdf5;
+  background:
+    linear-gradient(90deg, rgba(217,243,107,.06), transparent 25%, transparent 75%, rgba(255,253,245,.04)),
+    rgba(43, 54, 25, .95) !important;
+  border-top-color: rgba(255, 253, 245, .21) !important;
+  border-bottom-color: rgba(255, 253, 245, .21) !important;
+  box-shadow: 0 -8px 24px rgba(15, 20, 8, .10) !important;
+}
+html[data-theme="light"] .hero .hero-stage > .ticker-band .ticker-group span {
+  color: rgba(255, 253, 245, .91) !important;
+}
+html[data-theme="light"] .hero .hero-stage > .ticker-band .ticker-group b {
+  color: #d9f36b !important;
+}
+html[data-theme="light"] .hero .hero-stage > .ticker-band::before,
+html[data-theme="light"] .hero .hero-stage > .ticker-band::after {
+  background: linear-gradient(90deg, #2b3619, transparent) !important;
+}
+html[data-theme="light"] .hero .hero-stage > .ticker-band::after {
+  background: linear-gradient(270deg, #2b3619, transparent) !important;
+}
+

@@ -1,0 +1,100 @@
+/* Cursor-reactive grid backgrounds for 01 Profile, 02 Selected Work and 03 Approach only. */
+.about, .work, .approach {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-grid-base,
+.section-grid-canvas,
+.section-grid-matte {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Static grid is deliberately low-contrast; the cursor cells are the only moving accent. */
+.section-grid-base {
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(119, 145, 154, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(119, 145, 154, .055) 1px, transparent 1px);
+  background-size: 82px 82px;
+  opacity: .62;
+}
+
+.section-grid-canvas {
+  z-index: 1;
+  display: block;
+  background: transparent;
+}
+
+/* Matte layer fades the pattern into the section colour at the edges and between content zones. */
+.section-grid-matte {
+  z-index: 2;
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--bg) 70%, transparent) 0%,
+      color-mix(in srgb, var(--bg) 38%, transparent) 16%,
+      transparent 35%,
+      color-mix(in srgb, var(--bg) 24%, transparent) 66%,
+      color-mix(in srgb, var(--bg) 72%, transparent) 100%),
+    radial-gradient(ellipse at center, transparent 20%, color-mix(in srgb, var(--bg) 42%, transparent) 100%);
+}
+
+/* Keep all textual/interactive section content in front of the matte. */
+.about > .section-bar,
+.about > .about-layout,
+.work > .section-bar,
+.work > .work-heading,
+.work > .project-grid,
+.work > .work-note,
+.approach > .section-bar,
+.approach > .approach-inner {
+  position: relative;
+  z-index: 3;
+}
+
+/* The five/six project cards remain opaque surfaces above the grid. */
+.project-card {
+  position: relative;
+  z-index: 3;
+  background: var(--bg);
+  isolation: isolate;
+}
+.project-card-head,
+.project-card-copy,
+.project-card-foot {
+  background-color: var(--bg);
+}
+.project-art {
+  background-color: var(--panel);
+}
+
+/* The giant approach watermark is decorative and sits above the matte, below process content. */
+.approach > .approach-ghost {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .section-grid-base {
+    background-size: 64px 64px;
+    opacity: .48;
+  }
+  .section-grid-matte {
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--bg) 76%, transparent),
+        color-mix(in srgb, var(--bg) 44%, transparent) 22%,
+        color-mix(in srgb, var(--bg) 28%, transparent) 55%,
+        color-mix(in srgb, var(--bg) 78%, transparent)),
+      radial-gradient(ellipse at center, transparent 10%, color-mix(in srgb, var(--bg) 48%, transparent) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-grid-canvas { display: none; }
+}

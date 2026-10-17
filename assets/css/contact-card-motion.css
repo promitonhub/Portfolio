@@ -1,0 +1,41 @@
+/* Restrained pointer-reactive tilt for the existing LET’S TALK contact panel. */
+.contact-panel[data-reveal] {
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  /* Preserve the existing reveal fade while allowing the card's transform to reset smoothly. */
+  transition:
+    opacity 750ms cubic-bezier(.2,.7,.2,1),
+    transform 460ms cubic-bezier(.2,.7,.2,1),
+    border-color 320ms ease,
+    box-shadow 320ms ease;
+  will-change: transform;
+}
+.contact-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle at var(--contact-glow-x, 50%) var(--contact-glow-y, 50%),
+    rgba(244, 248, 234, .085) 0,
+    rgba(217, 243, 107, .035) 23%,
+    transparent 62%
+  );
+  transition: opacity 360ms ease;
+}
+.contact-panel[data-reveal].is-tilting {
+  transition-duration: 160ms, 140ms, 320ms, 320ms;
+  transition-timing-function: ease-out, ease-out, ease, ease;
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--line-strong));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .14), inset 0 0 0 1px rgba(217, 243, 107, .035);
+}
+.contact-panel.is-tilting .contact-glow { opacity: 1; }
+@media (hover: none), (pointer: coarse) {
+  .contact-panel[data-reveal] { will-change: auto; transition: none; }
+  .contact-glow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-panel, .contact-glow { transition: none !important; }
+  .contact-panel[data-reveal] { will-change: auto; }
+}

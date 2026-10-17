@@ -1,0 +1,109 @@
+/* Self-hosted ASCII wordmark. The left inset matches the first non-space glyph cell. */
+.hero-title-dissolve {
+  --dissolve-font-size: clamp(9px, 1.02vw, 14px);
+  position: relative;
+  display: block;
+  width: min(100%, 64ch);
+  max-width: 100%;
+  min-width: 0;
+  height: 14.04em;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  font-size: var(--dissolve-font-size);
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: normal;
+}
+.hero-title-dissolve .ascii-dissolve-output {
+  position: relative;
+  display: block;
+  width: 64ch;
+  max-width: 100%;
+  height: 14.04em;
+  margin: 0;
+  padding: 0;
+  color: var(--ink, #f0f0ec);
+  font-family: "Geist Mono", "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace;
+  font-size: var(--dissolve-font-size);
+  font-weight: 400;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: pre;
+  opacity: 0;
+  overflow: hidden;
+  text-shadow: 0 0 18px color-mix(in srgb, var(--accent, #d8f568) 16%, transparent);
+  transition: opacity .28s ease;
+}
+.hero-title-dissolve.ascii-dissolve-ready .ascii-dissolve-output { opacity: 1; }
+.hero-title-dissolve .hero-title-fallback {
+  position: absolute;
+  z-index: 2;
+  top: calc(var(--dissolve-font-size) * 4.65);
+  left: calc(var(--dissolve-font-size) * .62);
+  display: block;
+  width: max-content;
+  max-width: calc(100% - var(--dissolve-font-size));
+  padding: 0;
+  margin: 0;
+  color: var(--ink, #f0f0ec);
+  font-family: "Archivo", Inter, sans-serif;
+  font-size: clamp(76px, 8vw, 136px);
+  font-weight: 800;
+  letter-spacing: -.075em;
+  line-height: .91;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  animation: ascii-fallback-delayed .62s ease 2.35s both;
+}
+.hero-title-dissolve .hero-period { color: var(--accent, #d8f568); }
+@keyframes ascii-fallback-delayed {
+  0% { opacity: 0; visibility: hidden; }
+  1% { opacity: 0; visibility: visible; }
+  100% { opacity: 1; visibility: visible; }
+}
+.hero-title-dissolve.ascii-dissolve-ready .hero-title-fallback {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.hero-title-dissolve.ascii-dissolve-failed .ascii-dissolve-output { opacity: 0; }
+.hero-title-dissolve.ascii-dissolve-failed .hero-title-fallback {
+  animation: ascii-fallback-delayed .62s ease .45s both;
+  opacity: 0;
+  visibility: hidden;
+}
+@media (min-width: 1550px) {
+  .hero-title-dissolve { --dissolve-font-size: clamp(12px, .9vw, 15px); }
+  .hero-title-dissolve .hero-title-fallback { font-size: clamp(100px, 8vw, 145px); }
+}
+@media (max-width: 1180px) {
+  .hero-title-dissolve { --dissolve-font-size: clamp(8px, .94vw, 11px); }
+  .hero-title-dissolve .hero-title-fallback { font-size: clamp(68px, 7.8vw, 100px); }
+}
+@media (max-width: 900px) {
+  .hero-title-dissolve { --dissolve-font-size: clamp(7px, .93vw, 9px); height: 14.04em; }
+  .hero-title-dissolve .hero-title-fallback { font-size: clamp(62px, 7.5vw, 82px); }
+}
+@media (max-width: 700px) {
+  .hero-title-dissolve { --dissolve-font-size: clamp(6px, 1.28vw, 8px); width: 100%; height: 14.04em; }
+  .hero-title-dissolve .ascii-dissolve-output { width: 64ch; max-width: 100%; }
+  .hero-title-dissolve .hero-title-fallback {
+    top: calc(var(--dissolve-font-size) * 4.65);
+    font-size: clamp(62px, 16.2vw, 106px);
+  }
+}
+@media (max-width: 390px) {
+  .hero-title-dissolve { --dissolve-font-size: 5.8px; }
+  .hero-title-dissolve .hero-title-fallback { font-size: clamp(58px, 15.6vw, 72px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-dissolve .ascii-dissolve-output { display: none; transition: none; }
+  .hero-title-dissolve .hero-title-fallback { animation-duration: .45s; animation-delay: 2.35s; }
+}

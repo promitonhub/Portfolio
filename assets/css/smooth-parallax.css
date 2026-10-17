@@ -1,0 +1,46 @@
+/* Reusable, restrained scroll parallax for the main page and embedded documents. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height, 54px) + 14px);
+  -webkit-scroll-behavior: smooth;
+}
+body {
+  overscroll-behavior-y: auto;
+}
+.smooth-parallax {
+  --smooth-parallax-y: 0px;
+  translate: 0 var(--smooth-parallax-y);
+  will-change: translate;
+  backface-visibility: hidden;
+}
+/* Keep the case-study hero's decorative orbital layer separate from its readable copy. */
+.case-hero {
+  --smooth-hero-orbit-y: 0px;
+}
+.case-hero::after {
+  transform: translate3d(0, var(--smooth-hero-orbit-y), 0);
+}
+/* The CV sheet's fine grid glides independently from the text printed above it. */
+.cv-sheet {
+  --smooth-cv-grid-y: 0px;
+}
+.cv-sheet::before {
+  transform: translate3d(0, var(--smooth-cv-grid-y), 0);
+}
+@media (max-width: 760px) {
+  .smooth-parallax {
+    will-change: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .smooth-parallax { translate: none !important; will-change: auto; }
+  .case-hero::after, .cv-sheet::before { transform: none !important; }
+}
+@media print {
+  html { scroll-behavior: auto !important; }
+  .smooth-parallax { translate: none !important; }
+  .case-hero::after, .cv-sheet::before { transform: none !important; }
+}
+/* Keep scroll gestures inside an open document viewer instead of chaining to the page behind it. */
+.case-overlay-stage { overscroll-behavior: contain; }

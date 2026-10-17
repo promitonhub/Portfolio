@@ -1,0 +1,6 @@
+/* CV entry point beside the live domain in the contact panel. */
+.contact-cv-link{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:46px;margin:14px 0 0 12px;padding:0 17px;border:1px solid var(--line-strong);color:var(--ink);background:color-mix(in srgb,var(--panel) 65%,transparent);font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:color 180ms ease,border-color 180ms ease,background 180ms ease,transform 180ms ease}
+.contact-cv-link span{color:var(--accent);font-size:14px}
+.contact-cv-link:hover{background:var(--accent);border-color:var(--accent);color:#11130d;transform:translateY(-2px)}
+.contact-cv-link:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(max-width:560px){.contact-cv-link{min-height:42px;margin:14px 8px 0 0;padding:0 13px;font-size:9px}.contact-domain{margin-left:0!important}}

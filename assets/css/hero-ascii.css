@@ -1,0 +1,235 @@
+/* Hero composition: restrained left-aligned identity + large, undistorted ASCII portrait on the right. */
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center stretch;
+  padding: clamp(36px, 5vh, 58px) var(--page-gutter) 62px;
+  min-height: max(710px, calc(100svh - var(--header-height)));
+  overflow: clip;
+  isolation: isolate;
+}
+
+/* Keep the drawing surface architectural, not a pile of floating cards. */
+.hero-canvas { z-index: -1; }
+.hero-grid-lines {
+  opacity: .15;
+  background-size: 74px 74px;
+  mask-image: radial-gradient(ellipse at 66% 50%, #000 0%, transparent 75%);
+}
+.hero-orbit { display: none !important; }
+.hero-tile { display: none !important; }
+
+.hero-main-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  align-items: center;
+  gap: clamp(18px, 2.2vw, 38px);
+  width: min(100%, 1540px);
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 2.8vw, 48px) 12px clamp(22px, 3.2vw, 54px);
+}
+.hero-center {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 760px;
+  min-width: 0;
+  margin: 0;
+  text-align: left;
+}
+.hero-center .kicker {
+  justify-content: flex-start;
+  margin-bottom: clamp(12px, 1.35vw, 20px);
+}
+.hero-title {
+  width: max-content;
+  max-width: 100%;
+  font-size: clamp(78px, 8vw, 140px);
+  letter-spacing: -.075em;
+  line-height: .91;
+  text-align: left;
+  white-space: nowrap;
+}
+.hero-subtitle {
+  max-width: 100%;
+  margin-top: clamp(16px, 1.7vw, 25px);
+  font-size: clamp(24px, 2.3vw, 38px);
+  line-height: 1.17;
+  text-wrap: pretty;
+}
+.hero-lede {
+  max-width: 535px;
+  margin: 18px 0 0;
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.8;
+  text-align: left;
+}
+.hero-buttons { justify-content: flex-start; margin-top: clamp(20px, 2vw, 28px); }
+.hero-meta {
+  justify-content: flex-start;
+  max-width: 100%;
+  margin-top: clamp(24px, 2.5vw, 34px);
+  font-size: 9px;
+  line-height: 1.8;
+}
+
+/* The ASCII art is kept as preformatted text in a true monospace face. No horizontal
+   scaling or wrapping: each source character remains a consistent grid cell. */
+.hero-ascii-wrap {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  align-self: center;
+  width: calc(100% + clamp(24px, 3.5vw, 56px));
+  min-width: 0;
+  margin-right: calc(0px - clamp(24px, 3.5vw, 56px));
+  height: clamp(500px, calc(100svh - 155px), 790px);
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 52% 45%, color-mix(in srgb, var(--blue) 8%, transparent), transparent 58%),
+    radial-gradient(ellipse at 54% 62%, color-mix(in srgb, var(--green) 8%, transparent), transparent 69%);
+  mask-image: radial-gradient(ellipse at 53% 50%, #000 42%, rgba(0,0,0,.88) 68%, transparent 99%);
+  -webkit-mask-image: radial-gradient(ellipse at 53% 50%, #000 42%, rgba(0,0,0,.88) 68%, transparent 99%);
+}
+.hero-ascii-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .22;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, #000, transparent 74%);
+}
+.hero-ascii-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -35% 0 auto;
+  height: 24%;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent) 5%, transparent), transparent);
+  pointer-events: none;
+  animation: ascii-scan 14s ease-in-out infinite;
+}
+.hero-ascii-label,
+.hero-ascii-footer { display: none !important; }
+.hero-ascii-art {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  color: #aabac7;
+  opacity: .40;
+  font-family: "Share Tech Mono", "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace;
+  font-size: clamp(6px, .62vw, 10px);
+  font-weight: 400;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  line-height: 1.10;
+  letter-spacing: 0;
+  white-space: pre;
+  text-align: left;
+  text-shadow: 0 0 18px rgba(110, 160, 190, .10);
+  transform: translate3d(var(--ascii-pointer-x, 0px), var(--ascii-scroll-shift, 0px), 0) scale(var(--ascii-scroll-scale, 1));
+  transform-origin: center;
+  will-change: transform;
+  user-select: none;
+}
+.hero-bottom { z-index: 4; }
+
+@keyframes ascii-scan {
+  0%, 12% { transform: translateY(0); opacity: 0; }
+  24% { opacity: .7; }
+  70% { opacity: .38; }
+  100% { transform: translateY(560%); opacity: 0; }
+}
+
+@media (min-width: 1550px) {
+  .hero-main-layout { grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr); }
+  .hero-title { font-size: clamp(126px, 8vw, 148px); }
+  .hero-ascii-wrap { height: clamp(620px, calc(100svh - 125px), 840px); }
+  .hero-ascii-art { font-size: clamp(8.5px, .62vw, 10.6px); }
+}
+@media (max-width: 1180px) {
+  .hero-main-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .94fr);
+    gap: 16px;
+    padding-right: 28px;
+    padding-left: 22px;
+  }
+  .hero-title { font-size: clamp(70px, 7.9vw, 106px); }
+  .hero-subtitle { font-size: clamp(22px, 2.5vw, 31px); }
+  .hero-ascii-wrap { height: clamp(420px, calc(100svh - 270px), 600px); width: 100%; margin-right: 0; }
+  .hero-ascii-art { font-size: clamp(4.5px, .52vw, 6.3px); }
+}
+@media (max-width: 900px) {
+  .hero { min-height: max(710px, calc(100svh - var(--header-height))); padding-right: 24px; padding-left: 24px; }
+  .hero-main-layout { grid-template-columns: minmax(0, 1fr) minmax(0, .76fr); gap: 10px; padding-right: 12px; padding-left: 12px; }
+  .hero-title { font-size: clamp(62px, 7.5vw, 82px); }
+  .hero-subtitle { font-size: clamp(20px, 2.5vw, 25px); }
+  .hero-lede { font-size: 13px; }
+  .hero-buttons { gap: 8px; }
+  .hero-buttons .button { padding: 0 11px; gap: 12px; font-size: 7px; }
+  .hero-ascii-wrap { height: 420px; width: 100%; margin-right: 0; }
+  .hero-ascii-art { font-size: clamp(3.8px, .48vw, 4.8px); }
+  .hero-meta { gap: 5px 8px; font-size: 7px; }
+}
+@media (max-width: 700px) {
+  .hero { min-height: max(770px, calc(100svh - var(--header-height))); padding: 30px 20px 78px; align-items: start; }
+  .hero-main-layout { display: block; width: 100%; min-height: 650px; padding: 104px 0 50px; margin: 0; }
+  .hero-center { max-width: 610px; margin: 0; text-align: left; }
+  .hero-center .kicker { justify-content: flex-start; font-size: 8px; }
+  .hero-title { font-size: clamp(68px, 16.5vw, 112px); }
+  .hero-subtitle { max-width: 540px; margin-top: 18px; font-size: clamp(23px, 5.9vw, 32px); }
+  .hero-lede { max-width: 410px; margin: 15px 0 0; font-size: 14px; line-height: 1.7; }
+  .hero-buttons { justify-content: flex-start; gap: 8px; margin-top: 20px; }
+  .hero-buttons .button { min-height: 40px; padding: 0 11px; gap: 11px; font-size: 7px; }
+  .hero-meta { justify-content: flex-start; max-width: 350px; margin-top: 20px; gap: 5px 8px; font-size: 7px; }
+  .hero-ascii-wrap {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: -16%;
+    bottom: 55px;
+    left: auto;
+    width: 86%;
+    height: auto;
+    opacity: .40;
+    mask-image: linear-gradient(90deg, transparent 0%, transparent 15%, #000 45%, #000 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 15%, #000 45%, #000 100%);
+  }
+  .hero-ascii-art { font-size: clamp(3.2px, .76vw, 5.1px); }
+  .hero-bottom { right: 18px; left: 18px; }
+  .hero-bottom span:first-child { max-width: 150px; }
+}
+@media (max-width: 390px) {
+  .hero { padding-right: 16px; padding-left: 16px; }
+  .hero-main-layout { padding-top: 102px; }
+  .hero-title { font-size: clamp(64px, 16.8vw, 78px); }
+  .hero-subtitle { font-size: 23px; }
+  .hero-buttons { flex-wrap: wrap; }
+  .hero-meta { max-width: 290px; }
+  .hero-ascii-wrap { right: -25%; width: 92%; margin-right: 0; opacity: .32; }
+  .hero-ascii-art { font-size: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-ascii-wrap::after { animation: none !important; }
+  .hero-ascii-art { transform: none !important; }
+}
+
+
+/* Desktop hero vertical balance: lift the intro and portrait together so the upper
+   part of the hero is purposeful rather than an empty band. */
+@media (min-width: 901px) {
+  .hero-main-layout {
+    transform: translate3d(0, clamp(-118px, -13vh, -88px), 0);
+  }
+}
