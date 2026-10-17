@@ -1,0 +1,38 @@
+/* Focused fixes for the desktop Lighthouse / Agentic Browsing report. */
+
+/* Generic divs cannot carry aria-label without a named role. The ticker is marked role=group. */
+.ticker-band[role="group"] {
+  /* Keep the visual design unchanged; this rule documents the named group semantics. */
+}
+
+/* Raise the tiny footer labels above WCAG AA contrast thresholds on both themes. */
+html[data-theme="dark"] .site-footer > span,
+html[data-theme="dark"] .site-footer .back-top {
+  color: #a2a6a8 !important;
+}
+html[data-theme="light"] .site-footer > span,
+html[data-theme="light"] .site-footer .back-top {
+  color: #555950 !important;
+}
+
+/* Avoid animating `color` on the scroll rail; opacity/translation still provide the reveal. */
+.rail-chapter {
+  transition: opacity .3s ease, translate .35s ease !important;
+}
+
+/* The CRM sweep previously animated `left`, which triggers layout on every frame.
+   Keep the same approximate travel range using a compositor-friendly transform. */
+.crm-pulse {
+  left: 0 !important;
+  animation-name: crm-sweep-composited !important;
+  will-change: transform;
+}
+@keyframes crm-sweep-composited {
+  from { transform: translateX(-125%); }
+  to   { transform: translateX(393%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crm-pulse { animation: none !important; transform: translateX(0) !important; will-change: auto; }
+  .rail-chapter { transition: none !important; }
+}
