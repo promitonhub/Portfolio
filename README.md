@@ -94,3 +94,8 @@ The “LET’S TALK” panel has a restrained pointer tilt and cursor-following 
 ## Smooth scroll and parallax
 
 The portfolio, CV and case-study pages share `assets/css/smooth-parallax.css` and `assets/js/smooth-parallax.js`. The effect keeps native scrolling responsive while decorative artwork and secondary visual layers ease into small scroll-relative offsets. CV and case studies opened in the document overlay run the same effect inside their own iframe viewport, independently of the main page. Reduced-motion preferences disable the parallax, and print output remains unaffected.
+
+
+## Search, social sharing, and AI readability
+
+The public site uses canonical URLs, descriptive page titles and descriptions, Open Graph and large-image social cards, JSON-LD structured data, `robots.txt`, `sitemap.xml`, and `llms.txt`. The root `about.html` provides a semantic professional profile linked to the LinkedIn and GitHub profiles. Keep structured data consistent with information visibly stated on the site; do not add unsupported employers, awards, conversion claims, or other credentials.

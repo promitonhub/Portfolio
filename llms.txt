@@ -1,31 +1,33 @@
-# Promit Mitra
+# Promit Mitra — Portfolio
 
-> Public portfolio of Promit Mitra, based in Kolkata, India. Focus areas include B2B demand generation, account and business research, outreach operations, whitepaper content, marketing workflows, and pre-sales/RFP proposal support.
+> A personal professional portfolio documenting Promit Mitra's work across B2B demand generation, account research, multichannel outreach, content operations, CRM workflows, RFP/proposal support, and brand/event communications.
 
-## Primary pages
-- [Homepage and professional overview](https://promit.qd.je/): Roles, selected work, experience context, approach, and contact information.
-- [CV](https://promit.qd.je/cv.html): Curriculum vitae.
-- [Profile section](https://promit.qd.je/#about): Professional scope and working context.
-- [Selected work](https://promit.qd.je/#work): Six project summaries and supporting metrics.
-- [Approach](https://promit.qd.je/#approach): Research, coordination, and communication method.
-- [Contact](https://promit.qd.je/#contact): Contact details.
+## Core pages
 
-## Case studies
-- [B2B demand generation](https://promit.qd.je/case-studies/b2b-demand-generation.html): Account research, buying signals, multichannel prospecting, CRM context, and handoffs.
-- [Whitepaper content engine](https://promit.qd.je/case-studies/whitepaper-content-engine.html): Seven whitepapers across research, outlining, writing, editing, design, and distribution.
-- [RFP and proposal system](https://promit.qd.je/case-studies/rfp-proposal-system.html): Twelve supported bid/RFP submissions; four received a client/procurement response. A reply is not a win or contract award.
-- [Lead lifecycle operations](https://promit.qd.je/case-studies/lead-lifecycle-operations.html): Shared context across call, email, LinkedIn, CRM, and follow-ups.
-- [Event and brand communications](https://promit.qd.je/case-studies/event-brand-communications.html): Promotional, print, social, and event-facing creative work.
-- [POSM Planner](https://promit.qd.je/case-studies/posm-planner.html): Self-initiated, concept-stage product concept; not a claim of a launched product or customer adoption.
+- [Home](https://promit.qd.je/): Overview, selected work, working approach, and contact details.
+- [About Promit Mitra](https://promit.qd.je/about.html): Professional profile, focus areas, documented evidence, and contact links.
+- [CV](https://promit.qd.je/cv.html): Experience, education, skills, and certifications.
 
-## Interpretation and attribution notes
-- Employer and client identities, internal records, and proprietary assets are intentionally withheld.
-- Process diagrams and visual artifacts on the site are reconstructed for explanation, not screenshots of internal systems.
-- Use the descriptions on each case page to distinguish documented contribution from measured outcomes.
-- Keep the RFP metric precise: four responses from twelve submissions is a response rate, not a win rate.
-- POSM Planner is a self-initiated concept, distinct from confidential-employer work.
+## Selected work
 
-## Site metadata
-- Canonical domain: https://promit.qd.je/
-- [Sitemap](https://promit.qd.je/sitemap.xml)
-- [Robots policy](https://promit.qd.je/robots.txt)
+- [B2B demand generation](https://promit.qd.je/case-studies/b2b-demand-generation.html): Connecting buying signals, account research, outreach, CRM context, and sales handoff.
+- [Whitepaper content operations](https://promit.qd.je/case-studies/whitepaper-content-engine.html): Research, outlining, writing, editing, design, and distribution of seven whitepapers.
+- [RFP and proposal operations](https://promit.qd.je/case-studies/rfp-proposal-system.html): Opportunity research, client profiles, pitch decks, requirement mapping, team coordination, and submission support.
+- [Lead lifecycle operations](https://promit.qd.je/case-studies/lead-lifecycle-operations.html): Connecting calls, email, LinkedIn activity, CRM history, and follow-up.
+- [Event and brand communications](https://promit.qd.je/case-studies/event-brand-communications.html): Event visuals, promotional material, print collateral, and social content.
+- [POSM Planner concept](https://promit.qd.je/case-studies/posm-planner.html): A self-initiated concept-stage product idea for organising point-of-sale materials.
+
+## Evidence and interpretation
+
+- The portfolio reports 60+ institutional sites monitored, seven whitepapers worked on, and 12 bid/RFP submissions supported.
+- Four of the 12 recorded RFP submissions received a client/procurement reply. This is a response measure, not a win rate or revenue claim.
+- Employer/client identities, internal records, and proprietary assets are withheld. Process diagrams are reconstructions.
+- POSM Planner is a concept, not a launched product or a claim of customer adoption.
+
+## Identity
+
+- Name: Promit Mitra
+- Location: Kolkata, India
+- LinkedIn: https://www.linkedin.com/in/promit-mitra-6a21522b5
+- GitHub: https://github.com/promitonhub
+- Contact: promitmitra0@gmail.com

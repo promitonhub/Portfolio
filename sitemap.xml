@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://promit.qd.je/</loc></url>
+  <url><loc>https://promit.qd.je/about.html</loc></url>
   <url><loc>https://promit.qd.je/cv.html</loc></url>
   <url><loc>https://promit.qd.je/case-studies/b2b-demand-generation.html</loc></url>
-  <url><loc>https://promit.qd.je/case-studies/event-brand-communications.html</loc></url>
-  <url><loc>https://promit.qd.je/case-studies/lead-lifecycle-operations.html</loc></url>
-  <url><loc>https://promit.qd.je/case-studies/posm-planner.html</loc></url>
-  <url><loc>https://promit.qd.je/case-studies/rfp-proposal-system.html</loc></url>
   <url><loc>https://promit.qd.je/case-studies/whitepaper-content-engine.html</loc></url>
+  <url><loc>https://promit.qd.je/case-studies/rfp-proposal-system.html</loc></url>
+  <url><loc>https://promit.qd.je/case-studies/lead-lifecycle-operations.html</loc></url>
+  <url><loc>https://promit.qd.je/case-studies/event-brand-communications.html</loc></url>
+  <url><loc>https://promit.qd.je/case-studies/posm-planner.html</loc></url>
 </urlset>

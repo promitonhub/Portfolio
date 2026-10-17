@@ -1,88 +1,53 @@
-# Promit's public portfolio: AI training and discovery are intentionally allowed.
-# robots.txt is a crawler preference, not a guarantee of collection or training.
+# Public portfolio. Permission allows compliant crawlers to fetch published pages.
 User-agent: *
 Allow: /
 
-# OpenAI: foundation-model training, ChatGPT Search and user-triggered fetches.
+# OpenAI: search, retrieval, and potential training crawlers.
 User-agent: GPTBot
 Allow: /
-
 User-agent: OAI-SearchBot
 Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
 
-# Anthropic: model-development crawler, Claude search and user-triggered fetches.
-User-agent: ClaudeBot
+# Google Search and Gemini-related use control.
+User-agent: Googlebot
 Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
-# Google: Google-Extended permits use for Gemini model training and grounding.
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Googlebot
+# Anthropic / Claude.
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: anthropic-ai
 Allow: /
 
-User-agent: GoogleOther
-Allow: /
-
-# Mistral: training, search index and user-triggered fetches.
-User-agent: MistralAI-Training
-Allow: /
-
-User-agent: MistralAI-Index
-Allow: /
-
-User-agent: MistralAI-User
-Allow: /
-
-# Other commonly identified AI/data crawlers.
-User-agent: CCBot
-Allow: /
-
-User-agent: meta-externalagent
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
+# Other known AI and dataset crawler identities.
 User-agent: PerplexityBot
 Allow: /
-
+User-agent: MistralAI-Training
+Allow: /
+User-agent: MistralAI-Indexing
+Allow: /
+User-agent: MistralAI-User
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: CCBot
+Allow: /
 User-agent: cohere-ai
 Allow: /
 
-# Best-effort aliases only: xAI has not clearly documented a canonical public crawler token.
-# The wildcard Allow rule above also permits unidentified user agents.
+# Best-effort aliases only: xAI may use a different or undocumented crawler identity.
 User-agent: GrokBot
 Allow: /
-
-User-agent: xAI-Grok
-Allow: /
-
 User-agent: xAI-Bot
-Allow: /
-
-User-agent: xAI-Web-Crawler
-Allow: /
-
-User-agent: Grok-DeepSearch
 Allow: /
 
 Sitemap: https://promit.qd.je/sitemap.xml
