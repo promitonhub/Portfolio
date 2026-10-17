@@ -4004,3 +4004,58 @@ html::-webkit-scrollbar {
   width: 0 !important;
   height: 0 !important;
 }
+
+/* MOBILE BLOG READER TOUCH SCROLL FIX V1 */
+.blog-reader-overlay:not([hidden]) {
+  min-height: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+.blog-reader-overlay:not([hidden]) .blog-reader-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  height: min(92vh, 1000px) !important;
+  height: min(92dvh, 1000px) !important;
+  max-height: calc(100vh - 16px) !important;
+  max-height: calc(100dvh - 16px) !important;
+  overflow: hidden !important;
+}
+.blog-reader-overlay:not([hidden]) .blog-reader-scroll {
+  display: block !important;
+  position: relative;
+  flex: 1 1 auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  width: 100%;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+  scrollbar-gutter: auto;
+  pointer-events: auto !important;
+}
+.blog-reader-overlay:not([hidden]) .blog-reader-body {
+  min-height: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .blog-reader-overlay:not([hidden]) .blog-reader-panel {
+    height: min(94vh, 1000px) !important;
+    height: min(94dvh, 1000px) !important;
+    max-height: calc(100vh - 14px) !important;
+    max-height: calc(100dvh - 14px) !important;
+  }
+  .blog-reader-overlay:not([hidden]) .blog-reader-scroll {
+    flex: 1 1 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y;
+  }
+}
