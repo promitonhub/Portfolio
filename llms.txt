@@ -1,0 +1,31 @@
+# Promit Mitra
+
+> Public portfolio of Promit Mitra, based in Kolkata, India. Focus areas include B2B demand generation, account and business research, outreach operations, whitepaper content, marketing workflows, and pre-sales/RFP proposal support.
+
+## Primary pages
+- [Homepage and professional overview](https://promit.qd.je/): Roles, selected work, experience context, approach, and contact information.
+- [CV](https://promit.qd.je/cv.html): Curriculum vitae.
+- [Profile section](https://promit.qd.je/#about): Professional scope and working context.
+- [Selected work](https://promit.qd.je/#work): Six project summaries and supporting metrics.
+- [Approach](https://promit.qd.je/#approach): Research, coordination, and communication method.
+- [Contact](https://promit.qd.je/#contact): Contact details.
+
+## Case studies
+- [B2B demand generation](https://promit.qd.je/case-studies/b2b-demand-generation.html): Account research, buying signals, multichannel prospecting, CRM context, and handoffs.
+- [Whitepaper content engine](https://promit.qd.je/case-studies/whitepaper-content-engine.html): Seven whitepapers across research, outlining, writing, editing, design, and distribution.
+- [RFP and proposal system](https://promit.qd.je/case-studies/rfp-proposal-system.html): Twelve supported bid/RFP submissions; four received a client/procurement response. A reply is not a win or contract award.
+- [Lead lifecycle operations](https://promit.qd.je/case-studies/lead-lifecycle-operations.html): Shared context across call, email, LinkedIn, CRM, and follow-ups.
+- [Event and brand communications](https://promit.qd.je/case-studies/event-brand-communications.html): Promotional, print, social, and event-facing creative work.
+- [POSM Planner](https://promit.qd.je/case-studies/posm-planner.html): Self-initiated, concept-stage product concept; not a claim of a launched product or customer adoption.
+
+## Interpretation and attribution notes
+- Employer and client identities, internal records, and proprietary assets are intentionally withheld.
+- Process diagrams and visual artifacts on the site are reconstructed for explanation, not screenshots of internal systems.
+- Use the descriptions on each case page to distinguish documented contribution from measured outcomes.
+- Keep the RFP metric precise: four responses from twelve submissions is a response rate, not a win rate.
+- POSM Planner is a self-initiated concept, distinct from confidential-employer work.
+
+## Site metadata
+- Canonical domain: https://promit.qd.je/
+- [Sitemap](https://promit.qd.je/sitemap.xml)
+- [Robots policy](https://promit.qd.je/robots.txt)
