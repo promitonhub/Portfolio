@@ -1,0 +1,24 @@
+/* Larger animated ASCII wordmark on desktop only. Mobile retains its clean static PROMIT. */
+@media (min-width: 901px) {
+  .hero-title-dissolve {
+    --dissolve-font-size: clamp(12px, 1.28vw, 19px) !important;
+    width: min(75vw, 980px) !important;
+    max-width: none !important;
+    height: 14.04em !important;
+    overflow: visible !important;
+  }
+
+  .hero-title-dissolve .ascii-dissolve-output {
+    display: block !important;
+    width: 64ch !important;
+    max-width: none !important;
+    height: 14.04em !important;
+    font-size: var(--dissolve-font-size) !important;
+    line-height: 1.08 !important;
+    overflow: hidden !important;
+  }
+
+  .hero-title-dissolve .hero-title-fallback {
+    font-size: clamp(104px, 10vw, 160px) !important;
+  }
+}
