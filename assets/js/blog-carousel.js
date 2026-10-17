@@ -423,6 +423,32 @@
         readerScroll.scrollTop = after;
       }
     }, { passive: false });
+    // BLOG READER MANUAL TOUCH SCROLL FALLBACK V1
+    // Some mobile browsers fail to scroll this nested flex child reliably.
+    // Convert vertical finger movement into scrollTop changes on the reader itself.
+    let readerTouchY = null;
+    readerScroll?.addEventListener("touchstart", event => {
+      if (overlay.hidden || event.touches.length !== 1) {
+        readerTouchY = null;
+        return;
+      }
+      readerTouchY = event.touches[0].clientY;
+    }, { passive: true });
+
+    readerScroll?.addEventListener("touchmove", event => {
+      if (overlay.hidden || readerTouchY === null || event.touches.length !== 1) return;
+      const nextY = event.touches[0].clientY;
+      const deltaY = readerTouchY - nextY;
+      readerTouchY = nextY;
+      if (Math.abs(deltaY) < 0.5) return;
+      if (event.cancelable) event.preventDefault();
+      readerScroll.scrollTop += deltaY;
+    }, { passive: false });
+
+    const resetReaderTouch = () => { readerTouchY = null; };
+    readerScroll?.addEventListener("touchend", resetReaderTouch, { passive: true });
+    readerScroll?.addEventListener("touchcancel", resetReaderTouch, { passive: true });
+
     overlay.addEventListener("click", event => { if (event.target === overlay) closeReader(); });
     document.addEventListener("keydown", event => {
       if (overlay.hidden) return;
