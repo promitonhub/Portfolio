@@ -476,14 +476,23 @@
     else closeTimer = window.setTimeout(finish, 320);
   }
 
-  document.addEventListener("click", event => {
-    const link = event.target.closest?.("[data-blog-open]");
-    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    const post = posts.find(record => record.id === Number(link.dataset.postIndex));
-    if (!post) return;
+  // BLOG READER CLICK CAPTURE FIX V1
+  // Handle card clicks on the document in capture phase. This runs before card/page
+  // bubbling handlers can cancel propagation and bypass the old document-level handler.
+  const handleBlogCardOpen = event => {
+    const link = event.target?.closest?.("[data-blog-open]");
+    if (!link || !group.contains(link) || event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (typeof event.button === "number" && event.button !== 0) return;
+    const postId = Number(link.dataset.postIndex);
+    const post = posts.find(record => record.id === postId);
+    if (!post) {
+      console.error(`[Blog] Clicked card ${postId}, but its article was not loaded. Check blogs/Blog_Content/BC${postId}.txt and its matching thumbnail.`);
+      return;
+    }
     event.preventDefault();
     openReader(post, link);
-  });
+  };
+  document.addEventListener("click", handleBlogCardOpen, true);
 
   let observer = null;
   if ("IntersectionObserver" in window) {
