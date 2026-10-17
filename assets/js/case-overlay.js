@@ -151,6 +151,7 @@
     overlay.setAttribute('aria-hidden', 'false');
     overlay.dataset.contentType = kind;
     document.body.classList.add('case-overlay-open');
+    window.portfolioLenis?.stop();
 
     overlay.classList.remove('is-open');
     // Commit the closed state so the backdrop blur and panel motion start from zero.
@@ -180,6 +181,7 @@
       overlay.hidden = true;
       closing = false;
       if (openerHadFocus && lastTrigger?.isConnected) lastTrigger.focus({ preventScroll: true });
+      window.portfolioLenis?.start();
     };
     if (reduceMotion) finish();
     else {
