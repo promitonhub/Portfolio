@@ -1,74 +1,66 @@
 ---
-title: Finding Clarity in a Noisy Market
-category: ACCOUNT RESEARCH
-date: 2026-10-17
-excerpt: A practical framework for turning scattered company signals into a focused, evidence-led account research brief.
-alt: A lone figure looking out over a city at sunset, suggesting reflection before making the next move.
+title: "The Software Should Fit the Work, Not the Other Way Around"
+slug: "software-that-fits-the-work"
+category: "Business & Technology"
+excerpt: "A thoughtful look at when ready-made software is enough, when custom software earns its place, and how to make the choice without being dazzled by features."
+author: "Promit Mitra"
+reading_time: "6 min read"
+date: "2026-10-18"
+alt: "Minimal editorial illustration about choosing software that fits a team's real workflow."
 ---
 
-# Finding Clarity in a Noisy Market
+# The Software Should Fit the Work, Not the Other Way Around
 
-> DEMO ARTICLE — This sample is here to test the portfolio’s blog carousel and reader. Replace it with your own writing before treating it as a published post.
+*Somewhere between a spreadsheet that everyone secretly depends on and a system that promises to fix everything, there is usually a more useful question: what does the work actually need?*
 
-Every market produces more information than a person can reasonably act on. Company announcements, job listings, product changes, procurement notices, leadership updates and industry news can all be useful. Taken together without a question to guide them, they can also become noise.
+Choosing software can feel like choosing a future. One product promises simplicity. Another promises limitless flexibility. A third seems to have a feature for every problem you have ever had. It is easy to get caught comparing feature lists and forget the people who will have to live with the decision.
 
-The useful task is not to collect everything. It is to find the few signals that help answer a specific question: **why might this account be worth attention now?**
+The best choice is rarely the most impressive demonstration. It is the one that helps people do good work with less friction.
 
-## 1. Start with a question, not a spreadsheet
+## When the ready-made answer is the right answer
 
-Before researching an account, define the decision the research should support. Are you checking whether the organisation fits the target profile? Looking for a plausible reason to reach out? Preparing a first-call brief? Each question requires a different depth of evidence.
+Off-the-shelf software exists because many needs are shared. Most organisations need to manage accounts, communicate, keep track of projects, or maintain customer information. For these familiar jobs, an established product can offer a sensible beginning: it may be quicker to introduce, already documented, supported by a vendor, and improved over time.
 
-A simple brief might start with three prompts:
+There is no special virtue in building something from scratch if a reliable tool already does the job well. Sometimes the most thoughtful decision is to use what exists and give the team its time back.
 
-- **Fit:** Does the organisation resemble the kind of account the offer is built to help?
-- **Change:** Is there a recent development that could affect priorities, operations or buying plans?
-- **Relevance:** Can that development be connected to a useful, specific conversation without pretending to know more than the evidence shows?
+The signs of a good fit are often quiet ones. People understand the system without a long explanation. Information reaches the right place. The work can move forward without a second spreadsheet, a private workaround, or someone who knows a mysterious sequence of clicks.
 
-These prompts keep the work directed. They also make it easier to stop researching when additional detail is no longer changing the decision.
+## When the work starts bending around the tool
 
-## 2. Separate facts from interpretation
+A mismatch rarely announces itself all at once. It may begin with a small workaround: a field that does not quite fit, a report that must be assembled by hand, or two systems that refuse to share information. Someone creates a spreadsheet to bridge the gap. Someone else copies the same detail into another screen. Before long, the workaround becomes part of the process.
 
-A signal is not a conclusion. A company hiring for a new role is a fact; assuming that the company has approved a particular budget is an interpretation. The interpretation may be worth checking, but it should not be presented as confirmed information.
+That does not automatically mean the software is bad. Every tool has boundaries, and not every inconvenience deserves a custom solution. But repeated workarounds are worth listening to. They can reveal that the system’s assumptions and the organisation’s real work have drifted apart.
 
-For each useful finding, record the source, publication date, what it actually says, and the hypothesis it suggests. Keeping those pieces separate makes the brief easier to review and safer to use in outreach.
+Custom software becomes worth considering when the difference matters: when a distinctive process is central to the service, when systems need to work together in a way existing products cannot reasonably support, or when a digital experience is itself part of what makes the organisation valuable.
 
-| Finding | What it may suggest | What to verify next |
-| --- | --- | --- |
-| Several related roles are advertised | A team or capability may be expanding | Check the role descriptions and dates |
-| A new product or service is announced | Priorities or operational needs may be changing | Read the announcement and related documentation |
-| A procurement notice is published | A defined requirement may exist | Confirm scope, eligibility and deadlines |
-| A leadership change is announced | The organisation may be reviewing priorities | Look for direct, public statements about those priorities |
+The point is not to make everything unique. It is to notice where being different actually matters.
 
-The examples above are research prompts, not proof of intent to buy. The next step is verification, not assumption.
+## Custom does not mean effortless
 
-## 3. Build a short account brief
+A tailored system can reflect a team’s language, decisions, and sequence of work. It can remove unnecessary steps and make information easier to follow. But flexibility comes with ownership.
 
-A useful brief should make the next action easier. It does not need to be a long company history. It needs enough context for another person to understand the reasoning and decide what to do.
+Someone must help define what the system should do. Someone must test it with real situations, look after security, respond when something breaks, and decide how it should change. A custom build is not a finished object that can be put on a shelf; it is a responsibility that continues after launch.
 
-A compact format can include:
+That is why the question is not simply, “Can we build it?” It is also, “Can we look after it?” The answer may involve an internal team, an external partner, or a smaller custom component connected to established products.
 
-1. **Account context:** industry, relevant business unit and why the account fits the target profile.
-2. **Observed signals:** two or three dated findings with direct source links.
-3. **Working hypothesis:** one sentence explaining why the signals might matter.
-4. **Confidence:** what is well supported, what is inferred and what remains unknown.
-5. **Next step:** a question to validate, a person or function to research, or a reason to defer the account.
+## Look at the whole cost, including the invisible parts
 
-This structure is deliberately modest. It gives the reader a clear route from evidence to action without burying the reasoning in a pile of links.
+The price on a proposal is only one part of the story. A subscription may grow as more people use the product or as essential features move into a higher tier. A custom build may require discovery, design, testing, hosting, maintenance, and future improvements.
 
-## 4. Prioritise with consistent criteria
+There is also the cost that rarely appears on an invoice: time spent correcting duplicate records, reconciling reports, explaining workarounds to new colleagues, or waiting for information to travel between systems.
 
-When multiple accounts are being reviewed, use the same criteria for each one. A simple scoring model can help compare fit, timing and evidence quality, but a score should never hide weak research. A high-fit account with no credible reason to engage now is different from a similarly matched account with a relevant, recent change.
+A useful comparison looks beyond the first month. Over a few years, which option makes the work clearer? Which one can the organisation afford to maintain? Which one leaves room for change without creating a different kind of burden?
 
-One practical rule is to label confidence separately from priority. Priority helps decide what to review first; confidence describes how strongly the available evidence supports the hypothesis. Keeping those labels distinct prevents a neat spreadsheet from making uncertain information look certain.
+A lower price is valuable. So is a system that quietly gives people back an hour of their day. The important thing is to understand what is being exchanged.
 
-## 5. Turn the research into a respectful conversation
+## There may be a third choice
 
-The final test is whether the research leads to a better question. Instead of saying, “I know you are looking to solve this problem,” refer to the observable development and ask whether it is relevant. That leaves room for the contact to correct the hypothesis or explain the situation.
+The decision does not always have to be “buy everything” or “build everything.” An organisation might use a mature accounting package, keep its existing collaboration tools, and build one carefully scoped component to connect a particularly important workflow. This can preserve the reliability of established products while addressing the part that genuinely does not fit.
 
-The point of account research is not to sound as though every detail is known. It is to show that the conversation has a reason, that the reason comes from public evidence, and that the other person’s time is being treated carefully.
+Before making a decision, it helps to describe the problem in ordinary language. What is difficult today? Who feels the difficulty? How often does it happen? What would become easier if the problem disappeared? Those answers are more valuable than a long wish list of features.
 
-## A clear next step
+## A question worth keeping
 
-When the information gets noisy, return to the original question. Keep the strongest evidence, label the assumptions, and remove details that do not affect the next decision. The result is a smaller brief with more useful context—and a clearer path from research to action.
+Imagine that the software disappeared tomorrow. Which parts of the work would people miss because they are genuinely useful—and which parts would they be relieved to leave behind?
 
-**The takeaway:** collect less indiscriminately, verify more deliberately, and make every finding earn its place in the brief.
+That question can reveal more than a product demo. Choose the tool that serves the work and the people doing it, rather than asking the people to keep adapting to a tool simply because it has already been chosen.

@@ -1,0 +1,70 @@
+---
+title: "Moving to the Cloud Is Also a Conversation About Trust"
+slug: "cloud-migration-and-trust"
+category: "Cloud & Digital Transformation"
+excerpt: "Cloud migration is not just a technical move. It is a chance to understand what an organisation depends on, what it needs to protect, and what a safer next chapter could look like."
+author: "Promit Mitra"
+reading_time: "7 min read"
+date: "2026-10-18"
+alt: "Minimal editorial illustration representing a careful, trust-centred move to cloud infrastructure."
+---
+
+# Moving to the Cloud Is Also a Conversation About Trust
+
+*The most important thing to carry into a new environment is not a server. It is an understanding of what people rely on, and what must not be lost along the way.*
+
+“Moving to the cloud” can sound like a simple change of address: take the systems that live here and place them somewhere else. In practice, the technology is only one part of the move. The deeper task is to understand how the organisation works, what its systems quietly depend on, and what people need in order to trust the new arrangement.
+
+A successful migration should feel less like moving boxes in the dark and more like arriving somewhere prepared.
+
+## First, understand what is already there
+
+Every organisation has a map of its technology, even if no one has drawn it. There are applications people use every day, databases that feed reports, scheduled jobs that run overnight, and integrations that may have been created years ago by someone who has since moved on.
+
+Some of these connections are documented. Others survive through habit and institutional memory. Before changing the environment, it is worth asking people how the work actually gets done—not only how the architecture diagram says it should.
+
+This discovery stage can uncover old dependencies, unused systems, sensitive data, and processes that would be difficult to restore if interrupted. It also creates an opportunity to ask whether everything needs to move. An application that is no longer useful does not become more useful simply because it is hosted in a new place.
+
+## There is more than one way to move
+
+Some workloads can move with relatively few changes. Others need to be adjusted to work well in the new environment. A few may benefit from a more substantial redesign, while some are better left where they are for now.
+
+These approaches involve different levels of effort, risk, and long-term benefit. Moving quickly can reduce the time spent running two environments, but it may also carry old limitations into the new one. Redesigning everything can create a cleaner result, but it expands the amount of change that must be tested and supported.
+
+The right pace depends on the application, the people available, the consequences of downtime, and the reason for moving in the first place. A migration does not need to be dramatic to be worthwhile. A careful, smaller first move can teach a team what it needs to know before the more important systems follow.
+
+## Protect the ordinary day
+
+Technology projects often focus on launch day. The people using the systems are usually more concerned with an ordinary Tuesday: can they sign in, find the right information, complete their work, and get help if something behaves differently?
+
+That is why testing should include real workflows, not just a successful technical connection. Can the right people access the right data? Do reports still make sense? Are integrations delivering complete information? What happens when a service is unavailable? Can the team restore a backup, rather than merely confirm that a backup exists?
+
+A migration plan should also make room for a fallback. If a critical step fails, people need to know who makes the decision, how the service will be stabilised, and how the previous environment can be used if necessary. A rollback plan is not a lack of confidence. It is a form of care for the people who depend on the system.
+
+## Security is shared work
+
+Cloud platforms provide powerful security capabilities, but choosing a provider does not transfer every responsibility to that provider. The division of responsibility depends on the services being used and how they are configured.
+
+Access should be limited to what people and systems need. Sensitive information should be protected in transit and at rest where appropriate. Logs, alerts, patching, backups, recovery procedures, and data-retention rules need owners. Regulatory and contractual requirements should be understood before data is moved, not after.
+
+The aim is not to create a long checklist that nobody can maintain. It is to make the important responsibilities visible, assign them clearly, and practise the steps that matter when something goes wrong.
+
+## Cost needs the same attention as architecture
+
+Cloud spending can be easier to start than to understand. Usage may vary, storage can accumulate, and services that are convenient to leave running may continue to incur costs. A design that looks inexpensive in a small test can behave differently when real workloads arrive.
+
+A useful plan establishes a baseline before migration and identifies the services, people, and activities that will influence ongoing costs. Budgets and alerts can help, but regular review matters too. So does removing resources that are no longer needed and checking whether a chosen service is still appropriate.
+
+The goal is not to make every month identical. It is to make costs explainable, predictable enough for planning, and connected to real value.
+
+## Make the move in stages
+
+A sensible sequence often begins with discovery, followed by a small pilot, a tested migration plan, and a move arranged around the needs of the business. After launch, the work continues: monitor how the system behaves, listen to the people using it, correct what was missed, and document what the team has learned.
+
+The timetable should reflect the consequences of getting something wrong. A low-risk internal tool and a service that supports essential operations do not deserve the same migration window or the same recovery assumptions.
+
+## Before anything moves
+
+Ask one question: if this system were unavailable for a day, who would feel it first, and what would they need from us?
+
+The answer helps put priorities in the right order. Cloud migration is not a race toward a particular destination. It is a change in how technology is operated and cared for. The best move is the one that leaves people with a system they understand, can rely on, and know how to recover when the unexpected happens.
