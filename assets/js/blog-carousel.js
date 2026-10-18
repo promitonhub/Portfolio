@@ -137,7 +137,7 @@
     const card = element("article", "blog-card");
     card.dataset.postId = String(post.id);
     const link = element("a", "blog-card-link");
-    link.href = post.contentPath;
+    link.href = `/blogs/${post.id}/`;
     link.dataset.blogOpen = "";
     link.dataset.postIndex = String(post.id);
     link.setAttribute("aria-haspopup", "dialog");
@@ -389,7 +389,7 @@
             <h2 id="blog-reader-title" data-reader-title>Field note</h2>
           </div>
           <div class="blog-reader-actions">
-            <a class="blog-reader-source" data-reader-source href="#" target="_blank" rel="noopener">OPEN MARKDOWN ↗</a>
+            <a class="blog-reader-source" data-reader-source href="#" target="_blank" rel="noopener">OPEN ARTICLE ↗</a>
             <button class="blog-reader-close" type="button" aria-label="Close article" title="Close article"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6L18 18M18 6L6 18"/></svg></button>
           </div>
         </header>
@@ -472,8 +472,8 @@
     opener = trigger;
     readerTitle.textContent = post.title;
     readerKicker.textContent = `FIELD NOTE / ${String(post.id).padStart(2, "0")} — ${post.category}${post.date ? ` — ${post.date}` : ""}`;
-    readerSource.href = post.contentPath;
-    readerSource.setAttribute("aria-label", `Open raw Markdown text for ${post.title}`);
+    readerSource.href = `/blogs/${post.id}/`;
+    readerSource.setAttribute("aria-label", `Open permanent article page for ${post.title}`);
     readerBody.innerHTML = renderMarkdown(post.body, post.title);
     if (readerScroll) readerScroll.scrollTop = 0;
     overlay.hidden = false;

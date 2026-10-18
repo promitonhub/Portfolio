@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate /blog/<number>/index.html from matching BC<number>.txt and BT<number>.png."""
+"""Generate /blogs/<number>/index.html from matching BC<number>.txt and BT<number>.png."""
 from pathlib import Path
 from html import escape
 import json, re
@@ -43,7 +43,7 @@ def main():
         date = meta.get("date", "")
         excerpt = meta.get("excerpt", "")
         alt = meta.get("alt", title)
-        url = f"{SITE}/blog/{n}/"
+        url = f"{SITE}/blogs/{n}/"
         image_url = f"{SITE}/blogs/Blog_Thunbnails/BT{n}.png"
         description = excerpt or re.sub(r"\s+", " ", re.sub(r"[#>*_`]", "", body)).strip()[:220]
         html_body = markdown.markdown(body.strip(), extensions=["extra", "sane_lists", "smarty"], output_format="html5")
@@ -88,7 +88,7 @@ def main():
         }
         for key, value in repl.items():
             page = page.replace(key, value)
-        target = ROOT / "blog" / str(n) / "index.html"
+        target = ROOT / "blogs" / str(n) / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(page, encoding="utf-8")
         print(f"Generated {target.relative_to(ROOT)}")
