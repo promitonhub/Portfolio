@@ -99,3 +99,41 @@ The portfolio, CV and case-study pages share `assets/css/smooth-parallax.css` an
 ## Search, social sharing, and AI readability
 
 The public site uses canonical URLs, descriptive page titles and descriptions, Open Graph and large-image social cards, JSON-LD structured data, `robots.txt`, `sitemap.xml`, and `llms.txt`. The root `about.html` provides a semantic professional profile linked to the LinkedIn and GitHub profiles. Keep structured data consistent with information visibly stated on the site; do not add unsupported employers, awards, conversion claims, or other credentials.
+
+
+## Current site structure and search discovery
+
+The published site is a static GitHub Pages portfolio at `https://promit.qd.je/`.
+
+- `index.html` — homepage, profile, selected work, approach, blog preview, and contact.
+- `about.html` — full professional profile.
+- `cv.html` and `assets/pdf/Promit-Mitra-CV.pdf` — web CV and downloadable PDF.
+- `case-studies/` — six detailed portfolio case studies.
+- `blogs/index.html` — generated writing archive at `/blogs/`.
+- `blogs/<number>/index.html` — generated individual articles.
+- `blogs/Blog_Content/BC<number>.txt` — article sources.
+- `blogs/Blog_Thunbnails/BT<number>.png` — matching article thumbnails (existing directory spelling retained).
+- `scripts/build_all_blogs.py` — builds article pages and the archive.
+- `scripts/build_sitemap.py` — builds XML sitemaps from canonical, indexable HTML pages.
+
+### Search and AI discovery files
+
+- `robots.txt` — crawl policy for general and named AI crawlers; points to the sitemap index.
+- `sitemap.xml` — generated list of indexable canonical HTML URLs, including the blog archive and generated articles.
+- `sitemap_index.xml` — sitemap index pointing to `sitemap.xml`.
+- `llms.txt` — concise map of the portfolio and selected work.
+- `404.html` is excluded from the sitemap and carries `noindex`.
+
+The GitHub Pages workflow builds blog pages first and then regenerates the sitemap, so newly added articles are included automatically. Avoid hand-maintaining a static list of blog URLs.
+
+### Build locally
+
+From the repository root, install the Markdown dependency if needed, then run:
+
+```bash
+python -m pip install Markdown
+python scripts/build_all_blogs.py
+python scripts/build_sitemap.py
+```
+
+Commit generated sitemap files alongside source changes when working locally. The deployment workflow also regenerates them in its deployment artifact.

@@ -42,9 +42,20 @@ def main():
 <html lang="en" data-theme="dark"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b0c0d">
 <title>Writing &amp; Field Notes | Promit Mitra</title>
-<meta name="description" content="Articles and practical perspectives on technology, operations, learning, healthcare, and digital transformation.">
+<meta name="author" content="Promit Mitra">
+<meta name="description" content="Browse Promit Mitra's writing archive: practical perspectives on technology, operations, learning, healthcare, digital transformation, and the systems people rely on.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="canonical" href="https://promit.qd.je/blogs/">
-<meta property="og:type" content="website"><meta property="og:title" content="Writing &amp; Field Notes | Promit Mitra"><meta property="og:url" content="https://promit.qd.je/blogs/">
+<meta property="og:site_name" content="Promit Mitra"><meta property="og:locale" content="en_IN">
+<meta property="og:type" content="website"><meta property="og:title" content="Writing &amp; Field Notes | Promit Mitra">
+<meta property="og:description" content="Browse practical perspectives on technology, operations, learning, healthcare, digital transformation, and the systems people rely on.">
+<meta property="og:url" content="https://promit.qd.je/blogs/">
+<meta property="og:image" content="https://promit.qd.je/assets/images/social-preview.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Writing &amp; Field Notes | Promit Mitra">
+<meta name="twitter:description" content="Browse practical perspectives on technology, operations, learning, healthcare, digital transformation, and the systems people rely on.">
+<meta name="twitter:image" content="https://promit.qd.je/assets/images/social-preview.png">
+<link rel="sitemap" type="application/xml" href="https://promit.qd.je/sitemap_index.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/blog-index.css"><link rel="stylesheet" href="/assets/css/lenis.css"><script src="/assets/vendor/lenis.min.js" defer></script><script src="/assets/js/smooth-scroll.js" defer></script><script src="/assets/js/blog-index.js" defer></script></head><body>

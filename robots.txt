@@ -50,4 +50,5 @@ Allow: /
 User-agent: xAI-Bot
 Allow: /
 
-Sitemap: https://promit.qd.je/sitemap.xml
+# Sitemap index covers the full indexable portfolio and blog URL set.
+Sitemap: https://promit.qd.je/sitemap_index.xml

@@ -8,6 +8,13 @@
 - [About Promit Mitra](https://promit.qd.je/about.html): Professional profile, focus areas, documented evidence, and contact links.
 - [CV](https://promit.qd.je/cv.html): Experience, education, skills, and certifications.
 
+## Writing and discovery
+
+- [Blog archive](https://promit.qd.je/blogs/): Current archive of published articles, generated from the site's blog sources.
+- [XML sitemap](https://promit.qd.je/sitemap.xml): Indexable canonical HTML pages, including generated blog articles.
+- [Sitemap index](https://promit.qd.je/sitemap_index.xml): Entry point for the XML sitemap.
+- [Robots policy](https://promit.qd.je/robots.txt): Crawl policy and sitemap location.
+
 ## Selected work
 
 - [B2B demand generation](https://promit.qd.je/case-studies/b2b-demand-generation.html): Connecting buying signals, account research, outreach, CRM context, and sales handoff.
