@@ -25,7 +25,7 @@ jobs:
       - name: Install Markdown renderer
         run: python -m pip install --upgrade pip Markdown
       - name: Generate article pages from TXT and PNG files
-        run: python scripts/build_blogs.py
+        run: python scripts/build_all_blogs.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
