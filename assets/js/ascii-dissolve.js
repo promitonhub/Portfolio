@@ -222,13 +222,30 @@
   const stop = () => {
     alive = false;
     if (raf) cancelAnimationFrame(raf);
+    raf = 0;
   };
-  window.addEventListener("pagehide", stop, { once: true });
+
+  const start = () => {
+    if (document.hidden || raf) return;
+    alive = true;
+    raf = requestAnimationFrame(tick);
+  };
+
+  window.addEventListener("pagehide", stop);
+  window.addEventListener("pageshow", start);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+    } else {
+      start();
+    }
+  });
 
   function tick(now) {
     if (!alive) return;
     if (document.hidden) {
-      raf = requestAnimationFrame(tick);
+      raf = 0;
       return;
     }
     if (now - lastFrameAt >= frameInterval - 0.5) {
@@ -247,7 +264,7 @@
   try {
     output.textContent = renderAt(0);
     heading.classList.add("ascii-dissolve-ready");
-    requestAnimationFrame(tick);
+    start();
   } catch (error) {
     console.warn("Local ASCII dissolve failed to render.", error);
     heading.classList.add("ascii-dissolve-failed");
