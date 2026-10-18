@@ -18,6 +18,8 @@
   const progress = Math.max(0, Math.min(1, window.scrollY / maxScroll));
   doc.style.setProperty("--article-scroll-progress", progress);
   doc.style.setProperty("--article-scroll-pct", `${(progress * 100).toFixed(2)}%`);
+  const railPercent = document.querySelector("#article-rail-percent");
+  if (railPercent) railPercent.textContent = String(Math.round(progress * 100)).padStart(3, "0");
   if (coverHero && coverImage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
    const rect = coverHero.getBoundingClientRect();
    const travel = Math.max(1, rect.height * 1.05);
