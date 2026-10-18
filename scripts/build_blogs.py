@@ -69,7 +69,7 @@ def main():
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/lenis.css"><link rel="stylesheet" href="/assets/css/blog-page.css"><script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script><script src="/assets/js/blog-page.js" defer></script>
 <script type="application/ld+json">__JSONLD__</script></head><body>
-<header class="article-nav"><a class="wordmark" href="/">promit<span>.</span></a><a href="/#blog" class="back-link">← Back to portfolio</a></header>
+<header class="article-nav"><a class="wordmark" href="/">promit<span>.</span></a><nav class="article-nav-actions" aria-label="Article navigation"><a href="/blogs/" class="archive-link">View all blogs <span aria-hidden="true">↗</span></a><a href="/#blog" class="back-link">← Back to portfolio</a></nav></header>
 <div class="article-scroll-rail" aria-hidden="true"><div class="article-scroll-track"></div><div class="article-scroll-fill"></div><div class="article-scroll-thumb"></div></div><main><section class="article-hero" aria-label="Article cover"><img class="article-cover" src="/blogs/Blog_Thunbnails/BT__N__.png" alt="__ALT__" fetchpriority="high"><div class="cover-grain" aria-hidden="true"></div></section>
 <article class="article-shell"><div class="article-meta"><span>__CATEGORY__</span>__DATE__ __READING__</div>
 <h1 class="article-title" data-type-title>__TITLE__</h1>__DECK__

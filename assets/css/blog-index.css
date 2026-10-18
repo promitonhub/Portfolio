@@ -173,3 +173,23 @@ main{padding:clamp(10px,2vw,30px)}.intro-grid{min-height:clamp(470px,58vw,690px)
 .intro-title h1 .title-period {
   font-weight: 400 !important;
 }
+
+
+/* Same-origin cross-page navigation transition for the portfolio and blog pages. */
+@view-transition { navigation: auto; }
+::view-transition-old(root) {
+  animation: site-page-out 220ms cubic-bezier(.2,.7,.2,1) both;
+}
+::view-transition-new(root) {
+  animation: site-page-in 420ms cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes site-page-out {
+  to { opacity: .72; transform: translateY(-5px); }
+}
+@keyframes site-page-in {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
+}
