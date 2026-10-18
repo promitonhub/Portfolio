@@ -1,0 +1,175 @@
+/* Editorial archive: oversized editorial typography + dark technical grid */
+:root{color-scheme:dark;--bg:#0b0c0d;--fg:#f1eee6;--muted:#a4a6a4;--line:rgba(241,238,230,.15);--accent:#d5a34c;--mono:"Geist Mono",monospace}
+*{box-sizing:border-box}html{background:var(--bg);scroll-behavior:smooth;scrollbar-width:none}html::-webkit-scrollbar{display:none}body{margin:0;background:var(--bg);color:var(--fg);font-family:Archivo,Inter,system-ui,sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}button,input{font:inherit}
+.index-nav{height:76px;padding:0 clamp(22px,5vw,78px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid var(--line);gap:24px}.wordmark{font-size:1.5rem;font-weight:800;letter-spacing:-.09em;width:max-content}.wordmark span{color:var(--accent)}.index-nav nav{display:flex;gap:clamp(20px,4vw,62px)}.index-nav nav a,.nav-back{font:600 .72rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.index-nav nav a:hover,.index-nav nav .current,.nav-back:hover{color:var(--fg)}.nav-back{justify-self:end}
+main{padding:clamp(10px,2vw,30px)}.intro-grid{min-height:clamp(470px,58vw,690px);position:relative;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;background-color:#d6d1ca;color:#101112;padding:clamp(34px,6vw,90px) clamp(26px,5.5vw,84px);gap:6vw;background-image:radial-gradient(rgba(20,20,20,.09) .7px,transparent .7px);background-size:7px 7px}.intro-title,.intro-aside{position:relative;z-index:1}.eyebrow{font:600 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 24px}.intro-title .eyebrow{display:flex;align-items:center;gap:9px}.live-dot{width:7px;height:7px;border-radius:50%;background:#a8772c;box-shadow:0 0 0 4px #a8772c20}.intro-title h1{font-size:clamp(5rem,12vw,11.8rem);font-weight:500;letter-spacing:-.095em;line-height:.76;margin:0 0 35px;max-width:6ch}.title-dash{font-weight:400}.title-period{color:#a8772c}.intro-subtitle{font-size:clamp(1.1rem,2.2vw,1.8rem);line-height:1.1;letter-spacing:-.045em;margin:0 0 0 13%;max-width:13ch}.intro-aside{align-self:center;max-width:420px;margin-left:auto;margin-top:-3vw}.section-index{font:600 .67rem var(--mono);letter-spacing:.08em}.intro-aside>p{font-size:clamp(1.25rem,2.3vw,2rem);line-height:1.18;letter-spacing:-.055em;margin:28px 0 68px;max-width:17ch}.intro-rule{display:flex;justify-content:space-between;border-top:1px solid #10111240;padding-top:12px;font:600 .58rem var(--mono);letter-spacing:.08em}.intro-ghost{position:absolute;right:4%;bottom:-.22em;font-size:clamp(4rem,11vw,10rem);font-weight:800;letter-spacing:-.09em;line-height:.8;color:#10111209;pointer-events:none}
+.journal{padding:clamp(64px,9vw,126px) clamp(8px,4vw,60px) 36px}.journal-top{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:34px}.journal-top .eyebrow{color:var(--muted);margin-bottom:12px}.archive-count{color:var(--accent)}.journal-top h2{font-size:clamp(2.4rem,5.5vw,5.3rem);font-weight:500;letter-spacing:-.075em;line-height:.95;margin:0}.search-box{display:flex;align-items:center;gap:10px;width:min(100%,300px);border-bottom:1px solid #f1eee666;padding:0 0 10px;color:var(--muted)}.search-box input{width:100%;border:0;outline:0;background:transparent;color:var(--fg);font-size:.85rem}.search-box input::placeholder{color:#797d7d}.search-box kbd{border:1px solid var(--line);padding:1px 6px;font:.7rem var(--mono)}
+.filter-row{display:flex;gap:9px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:6px}.filter-button{border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--muted);padding:9px 13px;font-size:.72rem;cursor:pointer}.filter-button:hover,.filter-button.is-active{background:var(--fg);border-color:var(--fg);color:var(--bg)}.filter-button span{font:.62rem var(--mono);opacity:.65;margin-left:9px}
+.post-list{display:grid}.post-card{display:grid;grid-template-columns:minmax(240px,.82fr) minmax(0,1fr);gap:clamp(24px,5vw,78px);padding:clamp(28px,4.6vw,64px) 0;border-bottom:1px solid var(--line);align-items:center}.post-image-link{position:relative;display:block;overflow:hidden;aspect-ratio:1.3/1;background:#d6d1ca;max-height:390px}.post-image-link img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s,filter .5s;filter:saturate(.82)}.post-image-link:hover img{transform:scale(1.035);filter:saturate(1)}.image-arrow{position:absolute;right:12px;top:12px;width:40px;height:40px;display:grid;place-items:center;background:var(--bg);border-radius:50%;opacity:0;transition:opacity .25s}.post-image-link:hover .image-arrow{opacity:1}.post-copy{padding:4px 0;max-width:650px}.post-meta{display:flex;gap:14px;flex-wrap:wrap;font:600 .63rem var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}.post-meta span:first-child{color:var(--accent)}.post-copy h2{font-size:clamp(2rem,4.3vw,4.3rem);font-weight:500;line-height:.99;letter-spacing:-.07em;margin:20px 0 18px;max-width:17ch}.post-copy h2 a:hover{color:var(--accent)}.post-copy>p{color:#b9bbb7;font-size:clamp(.95rem,1.25vw,1.08rem);line-height:1.65;max-width:54ch;margin:0 0 32px}.post-bottom{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:15px;color:var(--muted);font:.65rem var(--mono);text-transform:uppercase}.post-bottom a{color:var(--fg)}.post-bottom a span{color:var(--accent)}.post-card[hidden]{display:none!important}.empty-state{padding:50px 0;color:var(--muted)}.archive-footer{display:flex;justify-content:space-between;gap:20px;padding:26px 0 0;color:#737877;font:.6rem var(--mono);letter-spacing:.1em}.index-footer{margin:70px clamp(24px,6vw,90px) 0;padding:28px 0 34px;border-top:1px solid var(--line);display:flex;align-items:center;gap:24px}.index-footer p{color:var(--muted);font-size:.8rem;margin:0}.index-footer>a:last-child{margin-left:auto;font:600 .7rem var(--mono);text-transform:uppercase}
+@media(min-width:1200px){.post-card:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(240px,.82fr)}.post-card:nth-child(even) .post-image-link{order:2}.post-card:nth-child(even) .post-copy{order:1;padding-left:2vw}}
+@media(max-width:760px){.index-nav{height:64px;grid-template-columns:1fr auto;padding-inline:18px}.index-nav nav{display:none}main{padding:10px}.intro-grid{min-height:600px;grid-template-columns:1fr;padding:36px 25px;gap:35px}.intro-title h1{font-size:clamp(5.2rem,20vw,8rem)}.intro-subtitle{margin-left:8%;font-size:1.3rem}.intro-aside{margin:0;max-width:360px;justify-self:end}.intro-aside>p{font-size:1.35rem;margin:17px 0 32px}.intro-ghost{font-size:19vw;bottom:0}.journal{padding:68px 7px 20px}.journal-top{align-items:flex-start;flex-direction:column}.journal-top h2{font-size:3.5rem}.search-box{width:100%;max-width:none}.filter-row{flex-wrap:nowrap;overflow-x:auto;padding-bottom:17px}.filter-button{white-space:nowrap}.post-card,.post-card:nth-child(even){grid-template-columns:1fr;gap:24px;padding:27px 0 33px}.post-image-link{aspect-ratio:1.15/1;max-height:none}.post-copy h2{font-size:clamp(2.2rem,9vw,3.5rem);max-width:20ch;margin:15px 0}.post-copy>p{margin-bottom:24px}.post-card:nth-child(even) .post-image-link,.post-card:nth-child(even) .post-copy{order:initial}.archive-footer{flex-direction:column;gap:10px}.index-footer{margin:50px 22px 0;flex-wrap:wrap}.index-footer>a:last-child{margin-left:0;width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* Refinement pass: compact masthead and make the archive appear sooner */
+.intro-grid {
+  min-height: clamp(430px, 46vw, 560px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+  gap: clamp(26px, 5vw, 72px);
+  padding: clamp(30px, 4.5vw, 68px) clamp(24px, 4.5vw, 68px);
+}
+.intro-title h1 {
+  font-size: clamp(4.4rem, 9.2vw, 9rem);
+  line-height: .8;
+  letter-spacing: -.09em;
+  max-width: 7ch;
+  margin-bottom: 27px;
+}
+.intro-subtitle {
+  font-size: clamp(1.05rem, 1.7vw, 1.55rem);
+  margin-left: 10%;
+  max-width: 15ch;
+}
+.intro-aside {
+  max-width: 440px;
+  margin: 0 0 0 auto;
+  align-self: center;
+}
+.intro-aside > p {
+  font-size: clamp(1rem, 1.45vw, 1.3rem);
+  line-height: 1.4;
+  letter-spacing: -.03em;
+  margin: 20px 0 36px;
+  max-width: 38ch;
+}
+.intro-ghost {
+  font-size: clamp(3rem, 8vw, 7.5rem);
+}
+.journal {
+  padding-top: clamp(56px, 7vw, 92px);
+}
+.journal-top { margin-bottom: 26px; }
+.post-card { padding: clamp(25px, 3.5vw, 48px) 0; }
+.post-copy h2 { font-size: clamp(1.9rem, 3.5vw, 3.7rem); }
+
+@media (min-width: 1200px) {
+  .intro-grid { min-height: 520px; }
+  .intro-title h1 { font-size: clamp(6rem, 8vw, 8.5rem); }
+}
+@media (max-width: 760px) {
+  .intro-grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 32px 22px 28px;
+    gap: 28px;
+  }
+  .intro-title h1 {
+    font-size: clamp(4.3rem, 16vw, 7rem);
+    line-height: .81;
+    max-width: 7ch;
+    margin-bottom: 24px;
+  }
+  .intro-subtitle { margin-left: 7%; font-size: 1.2rem; }
+  .intro-aside { max-width: none; margin: 0; }
+  .intro-aside > p { font-size: 1rem; margin: 16px 0 25px; }
+  .intro-ghost { font-size: 17vw; bottom: 0; }
+  .journal { padding-top: 58px; }
+}
+/* BLOG ARCHIVE HEADLINE REFINEMENT
+   Removes the dash, keeps “Blog” bold, and raises/lightens “and beyond”. */
+.intro-title h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.intro-title h1 .title-blog {
+  display: block;
+  font-weight: 800;
+  line-height: .78;
+  letter-spacing: -.085em;
+}
+
+.intro-title h1 .title-lower {
+  display: block;
+  margin-top: -.035em;
+  font-weight: 400;
+  line-height: .82;
+  letter-spacing: -.075em;
+}
+
+.intro-title h1 .title-period {
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .intro-title h1 .title-lower {
+    margin-top: -.015em;
+  }
+}
+/* BLOG ARCHIVE HEADLINE REFINEMENT V2
+   “Blog” is no longer bold; “and” sits beside it; em dash removed. */
+.intro-title h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: .18em;
+  row-gap: 0;
+}
+
+.intro-title h1 .title-blog {
+  display: inline;
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: -.075em;
+}
+
+.intro-title h1 .title-lower {
+  display: inline;
+  margin-top: 0;
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: -.075em;
+}
+
+.intro-title h1 .title-lower br {
+  display: none;
+}
+
+.intro-title h1 .title-period {
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .intro-title h1 {
+    column-gap: .14em;
+  }
+}
+/* FINAL FIX — keep “Blog and” together, put “beyond.” on line two, all regular weight */
+.intro-title h1 {
+  display: block !important;
+  max-width: none !important;
+  width: auto !important;
+  font-weight: 400 !important;
+  letter-spacing: -.075em !important;
+  line-height: .82 !important;
+  white-space: normal !important;
+}
+
+.intro-title h1 .title-blog,
+.intro-title h1 .title-lower {
+  display: inline !important;
+  font-weight: 400 !important;
+  letter-spacing: inherit !important;
+  line-height: inherit !important;
+  margin: 0 !important;
+}
+
+.intro-title h1 .title-lower {
+  white-space: normal !important;
+}
+
+.intro-title h1 .title-period {
+  font-weight: 400 !important;
+}
