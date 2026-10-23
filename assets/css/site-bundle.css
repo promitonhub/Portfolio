@@ -1836,7 +1836,7 @@ html, body { max-width: 100%; overflow-x: clip; }
   .hero-title-dissolve .hero-title-fallback { font-size: clamp(62px, 7.5vw, 82px); }
 }
 @media (max-width: 700px) {
-  .hero-title-dissolve { --dissolve-font-size: clamp(10px, 2.5vw, 14px); width: 100%; height: 14.04em; }
+  .hero-title-dissolve { --dissolve-font-size: clamp(12px, 3.8vw, 17px); width: 100%; height: 14.04em; }
   .hero-title-dissolve .ascii-dissolve-output { width: 64ch; max-width: 100%; }
   .hero-title-dissolve .hero-title-fallback {
     top: calc(var(--dissolve-font-size) * 4.65);
@@ -1844,7 +1844,7 @@ html, body { max-width: 100%; overflow-x: clip; }
   }
 }
 @media (max-width: 390px) {
-  .hero-title-dissolve { --dissolve-font-size: 10px; }
+  .hero-title-dissolve { --dissolve-font-size: 12px; }
   .hero-title-dissolve .hero-title-fallback { font-size: clamp(58px, 15.6vw, 72px); }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3130,7 +3130,7 @@ html[data-theme="light"] .hero .hero-stage > .ticker-band::after {
   /* Mobile keeps the original shaded renderer and its existing responsive type scale.
    Only remove the oversized fixed-size override; preserve the original glyph ramp. */
   .hero-title-dissolve {
-    --dissolve-font-size: clamp(10px, 2.5vw, 14px) !important;
+    --dissolve-font-size: clamp(12px, 3.8vw, 17px) !important;
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
