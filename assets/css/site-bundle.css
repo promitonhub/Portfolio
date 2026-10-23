@@ -4096,3 +4096,18 @@ html::-webkit-scrollbar {
 @media (prefers-reduced-motion: reduce) {
   html:not([data-motion-mode="full"])::view-transition-old(root), html:not([data-motion-mode="full"])::view-transition-new(root){ animation: none !important; }
 }
+
+
+/* Mobile reveal fix: prevent content remaining faded */
+@media (max-width: 700px) {
+  .js-ready [data-reveal],
+  .js-ready [data-reveal].is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .contact-panel[data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
