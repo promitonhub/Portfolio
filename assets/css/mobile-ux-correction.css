@@ -173,7 +173,7 @@
   }
 
   .hero-title-dissolve {
-    --dissolve-font-size: clamp(10px, calc(2.3vw + 1.8px), 12px) !important;
+    --dissolve-font-size: clamp(10px, calc(1.9vw + 1.8px), 11px) !important;
     display: block !important;
     width: max-content !important;
     max-width: none !important;
