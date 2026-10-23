@@ -1,65 +1,72 @@
 /*
- * Fit the existing 64-column ASCII dissolve to the actual available width.
- * Uses ResizeObserver so fold/unfold, rotation, split-screen and browser
- * viewport changes are handled without device-specific breakpoints.
+ * Fit the ASCII animation by measuring the actual browser font metrics.
+ * Keeps every one of the 64 columns at the same width; handles fold/unfold,
+ * rotation, split-screen and browser viewport resizing.
  */
 (() => {
   "use strict";
-
   const heading = document.querySelector(".hero-title-dissolve");
   const output = heading?.querySelector(".ascii-dissolve-output");
   if (!heading || !output) return;
 
-  const mobile = window.matchMedia("(max-width: 700px)");
-  if (!mobile.matches) return; // Desktop keeps its existing design.
+  const phone = window.matchMedia("(max-width: 700px)");
+  if (!phone.matches) return;
 
   const COLS = 64;
-  const MONOSPACE_ADVANCE = 0.602; // Typical CSS monospace glyph advance in em.
-  const MIN_FONT = 7;
-  const MAX_FONT = 22;
-  let observer = null;
+  const MIN_FONT = 5;
+  const MAX_FONT = 30;
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
   let frame = 0;
+  let lastWidth = -1;
+  let lastFont = -1;
+
+  function measuredAdvance(fontSize) {
+    if (!ctx) return fontSize * 0.602;
+    const family = getComputedStyle(output).fontFamily;
+    ctx.font = `${fontSize}px ${family}`;
+    return ctx.measureText("M").width;
+  }
 
   function fit() {
     frame = 0;
-    if (!mobile.matches) {
+    if (!phone.matches) {
       heading.style.removeProperty("--ascii-responsive-font-size");
       return;
     }
 
-    // Measure the actual inner width, not device pixels or reported DPI.
-    const rect = heading.getBoundingClientRect();
-    const styles = getComputedStyle(heading);
-    const horizontalPadding =
-      parseFloat(styles.paddingLeft || "0") +
-      parseFloat(styles.paddingRight || "0");
-    const available = Math.max(0, rect.width - horizontalPadding);
-    if (!available) return;
+    const available = heading.getBoundingClientRect().width;
+    if (!Number.isFinite(available) || available <= 0) return;
+    if (Math.abs(available - lastWidth) < 0.5 && lastFont > 0) return;
 
-    // The generated art has exactly 64 columns. Fit all columns to the real
-    // content width; this naturally scales across compact and foldable phones.
-    const rawSize = available / (COLS * MONOSPACE_ADVANCE);
-    const fontSize = Math.max(MIN_FONT, Math.min(MAX_FONT, rawSize));
-    heading.style.setProperty("--ascii-responsive-font-size", `${fontSize.toFixed(3)}px`);
+    // Measure the browser's actual glyph advance at 1 CSS px, then solve:
+    // font size = available width / (64 columns × glyph advance at 1px).
+    const advanceAtOnePx = measuredAdvance(1);
+    if (!advanceAtOnePx) return;
+    const exact = available / (COLS * advanceAtOnePx);
+    const fontSize = Math.max(MIN_FONT, Math.min(MAX_FONT, exact));
 
-    // Ensure the preformatted output uses the same width measurement.
-    output.style.width = "100%";
-    output.style.maxWidth = "100%";
+    heading.style.setProperty("--ascii-responsive-font-size", `${fontSize.toFixed(4)}px`);
+    output.style.width = "max-content";
+    output.style.maxWidth = "none";
+    lastWidth = available;
+    lastFont = fontSize;
   }
 
-  const scheduleFit = () => {
+  function schedule() {
     if (!frame) frame = requestAnimationFrame(fit);
-  };
+  }
 
   if ("ResizeObserver" in window) {
-    observer = new ResizeObserver(scheduleFit);
+    const observer = new ResizeObserver(schedule);
     observer.observe(heading);
   } else {
-    window.addEventListener("resize", scheduleFit, { passive: true });
+    window.addEventListener("resize", schedule, { passive: true });
   }
 
-  mobile.addEventListener?.("change", scheduleFit);
-  window.addEventListener("orientationchange", scheduleFit, { passive: true });
-  window.addEventListener("pageshow", scheduleFit);
-  scheduleFit();
+  phone.addEventListener?.("change", schedule);
+  window.addEventListener("orientationchange", schedule, { passive: true });
+  window.addEventListener("pageshow", schedule);
+  if (document.fonts?.ready) document.fonts.ready.then(schedule);
+  schedule();
 })();
