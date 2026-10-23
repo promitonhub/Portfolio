@@ -4129,3 +4129,18 @@ html::-webkit-scrollbar {
     transform: none !important;
   }
 }
+
+
+/* Mobile ASCII: preserve left anchor and allow four-cell right extension. */
+@media (max-width: 700px) {
+  .hero-title-dissolve {
+    width: calc(100% + 4ch) !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+  .hero-title-dissolve .ascii-dissolve-output {
+    width: 64ch !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+}
