@@ -3127,19 +3127,19 @@ html[data-theme="light"] .hero .hero-stage > .ticker-band::after {
   }
   .hero-center .kicker .live-dot { margin-top: .65em; }
 
-  /* Mobile uses the same shaded ASCII renderer and font family as desktop.
-   Keep the first pass fixed-size; tune size separately after visual review. */
+  /* Mobile keeps the original shaded renderer and its existing responsive type scale.
+   Only remove the oversized fixed-size override; preserve the original glyph ramp. */
   .hero-title-dissolve {
-    --dissolve-font-size: 12px !important;
+    --dissolve-font-size: clamp(6px, 1.28vw, 8px) !important;
     display: block !important;
-    width: max-content !important;
-    max-width: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: 14.04em !important;
     min-height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
-    font-size: 12px !important;
+    font-size: var(--dissolve-font-size) !important;
     line-height: 1.08 !important;
     letter-spacing: 0 !important;
   }
@@ -3147,12 +3147,12 @@ html[data-theme="light"] .hero .hero-stage > .ticker-band::after {
     display: block !important;
     position: relative !important;
     width: 64ch !important;
-    max-width: none !important;
+    max-width: 100% !important;
     height: 14.04em !important;
     margin: 0 !important;
     padding: 0 !important;
     font-family: "Geist Mono", "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace !important;
-    font-size: 12px !important;
+    font-size: var(--dissolve-font-size) !important;
     font-weight: 400 !important;
     font-variant-ligatures: none !important;
     font-feature-settings: "liga" 0, "calt" 0 !important;
@@ -3160,7 +3160,7 @@ html[data-theme="light"] .hero .hero-stage > .ticker-band::after {
     letter-spacing: 0 !important;
     text-align: left !important;
     white-space: pre !important;
-    overflow: visible !important;
+    overflow: hidden !important;
   }
   .hero-title-dissolve .hero-title-fallback { display: none !important; }
 
