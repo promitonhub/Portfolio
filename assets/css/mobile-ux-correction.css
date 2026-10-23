@@ -162,7 +162,7 @@
 }
 
 
-/* Mobile ASCII overflow test: 14 columns beyond the visible frame. */
+/* Mobile ASCII grid: keep its left anchor, enlarge each cell, and let the 64-column frame run off the right edge. */
 @media (max-width: 700px) {
   .hero,
   .hero-stage,
@@ -171,16 +171,27 @@
   .hero-title-dissolve {
     overflow: visible !important;
   }
+
   .hero-title-dissolve {
-    --dissolve-font-size: clamp(8.5px, 3vw, 12px) !important;
+    --dissolve-font-size: clamp(10px, calc(2.55vw + 2px), 13px) !important;
+    display: block !important;
     width: max-content !important;
     max-width: none !important;
+    margin-left: 0 !important;
+    text-align: left !important;
   }
+
   .hero-title-dissolve .ascii-dissolve-output {
+    display: block !important;
     width: 64ch !important;
+    min-width: 64ch !important;
     max-width: none !important;
     font-size: var(--dissolve-font-size) !important;
-    overflow: visible !important;
+    line-height: 1.08 !important;
+    letter-spacing: 0 !important;
     white-space: pre !important;
+    overflow: visible !important;
+    transform: none !important;
+    transform-origin: left top !important;
   }
 }
