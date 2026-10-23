@@ -1,0 +1,126 @@
+/* Targeted correction for the reported phone regressions. */
+@media (max-width: 700px) {
+  /* mobile-hero.css hid the real canvas output. Restore the animated ASCII title. */
+  .hero-title-dissolve {
+    --dissolve-font-size: clamp(4.4px, .78vw, 6px) !important;
+    height: 14.04em !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .hero-title-dissolve .ascii-dissolve-output {
+    display: block !important;
+    width: 64ch !important;
+    max-width: 100% !important;
+    height: 14.04em !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: hidden !important;
+  }
+  .hero-title-dissolve.ascii-dissolve-ready .hero-title-fallback {
+    display: none !important;
+  }
+  .hero-title-dissolve.ascii-dissolve-failed .hero-title-fallback {
+    display: block !important;
+  }
+
+  /* No empty portrait-sized region: make the hero and stage content-height. */
+  .hero,
+  html:not([data-motion-mode="full"]) .hero {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .hero-stage {
+    position: relative !important;
+    inset: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .hero-main-layout {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-top: 28px !important;
+    padding-bottom: 25px !important;
+  }
+  .hero-ascii-wrap,
+  .hero-ascii-particles {
+    display: none !important;
+  }
+  .hero-bottom {
+    position: relative !important;
+    inset: auto !important;
+    margin: 0 18px 15px !important;
+  }
+
+  /* Blog copy and archive CTA need real foreground contrast, not opacity-muted text. */
+  .blog-heading,
+  .blog-heading * {
+    opacity: 1;
+  }
+  .blog-heading-copy > .kicker {
+    color: var(--accent, #d9f36b) !important;
+  }
+  .blog-heading h2,
+  .blog-heading-copy > p:last-child {
+    color: var(--ink, #f0f0ec) !important;
+    opacity: 1 !important;
+  }
+  .blog-heading-index.blog-archive-link {
+    color: var(--ink, #f0f0ec) !important;
+    border-color: var(--line-strong, rgba(240,240,236,.45)) !important;
+    background: #111314 !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  .blog-heading-index.blog-archive-link small {
+    color: var(--ink, #f0f0ec) !important;
+    opacity: 1 !important;
+  }
+  .blog-heading-index.blog-archive-link i {
+    color: var(--accent, #d9f36b) !important;
+  }
+
+  /* Revert the automatic Approach accordion. Keep all explanatory copy visible,
+     remove the generated Read Details controls and restore a static compact list. */
+  .process-track {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+  }
+  .process-step,
+  .process-step:not(:first-child) {
+    display: block !important;
+    min-height: 0 !important;
+    padding: 17px 0 !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+  .process-step p,
+  .process-step .process-base,
+  .process-step.is-mobile-active p,
+  .process-step.is-mobile-active .process-base {
+    display: block !important;
+    max-height: none !important;
+    height: auto !important;
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: none !important;
+  }
+  .process-step-toggle { display: none !important; }
+
+  /* The sixth workflow illustration is CSS-built; keep its dashboard within its frame. */
+  .project-posm .project-art {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1.34 / 1 !important;
+    overflow: hidden !important;
+  }
+  .posm-dashboard {
+    box-sizing: border-box;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+}
