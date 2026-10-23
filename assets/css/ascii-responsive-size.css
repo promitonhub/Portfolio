@@ -21,7 +21,7 @@
     margin: 0 !important;
     padding: 0 !important;
     font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace !important;
-    font-size: var(--ascii-responsive-font-size, 8px) !important;
+    font-size: clamp(5px, calc((100vw - 48px) / 64), 10px) !important;
     font-weight: 400 !important;
     font-style: normal !important;
     font-stretch: normal !important;
