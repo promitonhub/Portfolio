@@ -1,0 +1,12 @@
+/* The ASCII renderer itself is now rasterised to a fixed cell grid. */
+@media (max-width: 700px) {
+  .hero-title-dissolve .ascii-dissolve-output {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace !important;
+    font-variant-ligatures: none !important;
+    font-feature-settings: "liga" 0, "calt" 0, "kern" 0 !important;
+    font-kerning: none !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    white-space: pre !important;
+  }
+}

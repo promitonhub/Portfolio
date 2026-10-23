@@ -79,48 +79,56 @@
   const letterGap = gapForUnit(unit);
   const y0 = ROWS / 2 - 3 * unit;
 
+  /*
+   * Rasterise each word onto the exact 64 × 13 cell grid.
+   * This avoids cumulative x-coordinate drift from converting vector stroke
+   * coordinates to character columns and back.
+   */
   const bakeWord = word => {
     const cover = new Float32Array(COLS * ROWS);
     const slot = new Int8Array(COLS);
-    let pen = Math.round(2 * unit * R); // left anchor shared by every word
-    const centres = [];
+    const canvas = document.createElement("canvas");
+    canvas.width = COLS * 4;
+    canvas.height = ROWS * 4;
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
 
-    for (const ch of word) {
-      const paths = glyph(ch);
-      const [lo, hi] = span(paths);
-      const width = Math.round(2 * unit * (hi - lo));
-      centres.push(pen + width / 2);
-      const minCol = Math.max(0, pen - 3);
-      const maxCol = Math.min(COLS, pen + width + 3);
+    if (ctx) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#fff";
+      // A fixed-width font and 4× sampling preserve the same cell pitch for
+      // every character. Word widths are measured, not guessed from glyph paths.
+      const fontPx = 26;
+      ctx.font = `700 ${fontPx}px monospace`;
+      ctx.textBaseline = "middle";
+      ctx.textAlign = "left";
+      const measured = ctx.measureText(word).width;
+      const scale = Math.min(1, (COLS * 4 - 4) / Math.max(1, measured));
+      ctx.save();
+      ctx.translate(2, canvas.height / 2);
+      ctx.scale(scale, scale);
+      ctx.fillText(word, 0, 0);
+      ctx.restore();
+
+      const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
       for (let row = 0; row < ROWS; row++) {
-        for (let col = minCol; col < maxCol; col++) {
-          let hit = 0;
-          for (let sy = 0; sy < 3; sy++) {
-            for (let sx = 0; sx < 3; sx++) {
-              const gx = lo + (col + (sx + 0.5) / 3 - pen) / (2 * unit);
-              const gy = (row + (sy + 0.5) / 3 - y0) / unit;
-              let d = 9;
-              for (const path of paths) {
-                for (let i = 0; i + 3 < path.length; i += 2) {
-                  d = Math.min(d, segmentDistance(gx, gy, path[i], path[i + 1], path[i + 2], path[i + 3]));
-                }
-              }
-              if (d <= 0) hit++;
+        for (let col = 0; col < COLS; col++) {
+          let sum = 0;
+          for (let sy = 0; sy < 4; sy++) {
+            for (let sx = 0; sx < 4; sx++) {
+              const px = col * 4 + sx;
+              const py = row * 4 + sy;
+              sum += pixels[(py * canvas.width + px) * 4 + 3] / 255;
             }
           }
-          const k = row * COLS + col;
-          cover[k] = Math.max(cover[k], hit / 9);
+          cover[row * COLS + col] = sum / 16;
         }
       }
-      pen += width + letterGap;
-    }
 
-    for (let col = 0; col < COLS; col++) {
-      let best = 0;
-      for (let i = 1; i < centres.length; i++) {
-        if (Math.abs(centres[i] - col) < Math.abs(centres[best] - col)) best = i;
+      const advance = Math.min(4 * fontPx * scale, canvas.width) / Math.max(1, word.length);
+      for (let col = 0; col < COLS; col++) {
+        const charIndex = Math.min(word.length - 1, Math.max(0, Math.floor((col * 4 - 2) / Math.max(1, advance))));
+        slot[col] = charIndex;
       }
-      slot[col] = best;
     }
     return { cover, slot };
   };
