@@ -160,3 +160,27 @@
     display: block !important;
   }
 }
+
+
+/* Mobile ASCII overflow test: 14 columns beyond the visible frame. */
+@media (max-width: 700px) {
+  .hero,
+  .hero-stage,
+  .hero-main-layout,
+  .hero-center,
+  .hero-title-dissolve {
+    overflow: visible !important;
+  }
+  .hero-title-dissolve {
+    --dissolve-font-size: clamp(8.5px, 3vw, 12px) !important;
+    width: max-content !important;
+    max-width: none !important;
+  }
+  .hero-title-dissolve .ascii-dissolve-output {
+    width: 64ch !important;
+    max-width: none !important;
+    font-size: var(--dissolve-font-size) !important;
+    overflow: visible !important;
+    white-space: pre !important;
+  }
+}
