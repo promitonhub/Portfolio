@@ -15,7 +15,7 @@
   const COLS = 64;
   const ROWS = 13;
   const GAP = 4;
-  const RAMP = " .·░▒▓█";
+  const RAMP = " .:-=+#";
   const HOLD = 1.6;
   const TRANS = 2.6;
   const STAGGER = 0.2;
