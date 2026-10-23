@@ -104,6 +104,6 @@
   .hero-title-dissolve .hero-title-fallback { font-size: clamp(58px, 15.6vw, 72px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-title-dissolve .ascii-dissolve-output { display: none; transition: none; }
-  .hero-title-dissolve .hero-title-fallback { animation-duration: .45s; animation-delay: 2.35s; }
+  html:not([data-motion-mode="full"]) .hero-title-dissolve .ascii-dissolve-output{ display: none; transition: none; }
+  html:not([data-motion-mode="full"]) .hero-title-dissolve .hero-title-fallback{ animation-duration: .45s; animation-delay: 2.35s; }
 }

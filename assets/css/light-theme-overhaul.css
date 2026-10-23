@@ -444,13 +444,7 @@ html[data-theme="light"] .contact-cv-link {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html[data-theme="light"] body,
-  html[data-theme="light"] .site-header,
-  html[data-theme="light"] .case-nav,
-  html[data-theme="light"] .project-card,
-  html[data-theme="light"] .case-overlay-panel,
-  html[data-theme="light"] .contact-panel,
-  html[data-theme="light"] .contact-cv-link { transition-duration: 0.01ms !important; }
+  html:not([data-motion-mode="full"])[data-theme="light"] body, html:not([data-motion-mode="full"])[data-theme="light"] .site-header, html:not([data-motion-mode="full"])[data-theme="light"] .case-nav, html:not([data-motion-mode="full"])[data-theme="light"] .project-card, html:not([data-motion-mode="full"])[data-theme="light"] .case-overlay-panel, html:not([data-motion-mode="full"])[data-theme="light"] .contact-panel, html:not([data-motion-mode="full"])[data-theme="light"] .contact-cv-link{ transition-duration: 0.01ms !important; }
 }
 
 /* Light-mode hero art direction: deep botanical olive, white-only foreground.

@@ -33,6 +33,6 @@ html[data-theme="light"] .site-footer .back-top {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .crm-pulse { animation: none !important; transform: translateX(0) !important; will-change: auto; }
-  .rail-chapter { transition: none !important; }
+  html:not([data-motion-mode="full"]) .crm-pulse{ animation: none !important; transform: translateX(0) !important; will-change: auto; }
+  html:not([data-motion-mode="full"]) .rail-chapter{ transition: none !important; }
 }

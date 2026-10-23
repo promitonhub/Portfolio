@@ -307,8 +307,8 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ticker-track { animation: none !important; transform: none !important; }
-  .stack-page, .editorial-sheet, .brand-poster, .brand-hero-poster { transition: none !important; }
+  html:not([data-motion-mode="full"]) .ticker-track{ animation: none !important; transform: none !important; }
+  html:not([data-motion-mode="full"]) .stack-page, html:not([data-motion-mode="full"]) .editorial-sheet, html:not([data-motion-mode="full"]) .brand-poster, html:not([data-motion-mode="full"]) .brand-hero-poster{ transition: none !important; }
 }
 /* Keep the headline on the light field; the dark lower field is reserved for the footer label. */
 .brand-poster { background: linear-gradient(145deg, #d9f36b 0%, #a7b66e 70%, #1f2927 70% 100%); }

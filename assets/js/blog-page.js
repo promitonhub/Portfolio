@@ -1,9 +1,9 @@
 (() => {
 
  /* Blog article Lenis initialization */
- if (window.Lenis && !window.portfolioLenis && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+ if (window.Lenis && !window.portfolioLenis && !(window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
   window.portfolioLenis = new window.Lenis({
-   autoRaf: true, anchors: true, smoothWheel: true,
+   autoRaf: true, respectReducedMotion: document.documentElement.dataset.motionMode !== "full", anchors: true, smoothWheel: true,
    lerp: 0.085, wheelMultiplier: 0.9, touchMultiplier: 1
   });
  }
@@ -20,7 +20,7 @@
   doc.style.setProperty("--article-scroll-pct", `${(progress * 100).toFixed(2)}%`);
   const railPercent = document.querySelector("#article-rail-percent");
   if (railPercent) railPercent.textContent = String(Math.round(progress * 100)).padStart(3, "0");
-  if (coverHero && coverImage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (coverHero && coverImage && !(window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
    const rect = coverHero.getBoundingClientRect();
    const travel = Math.max(1, rect.height * 1.05);
    const coverProgress = Math.max(0, Math.min(1, (window.innerHeight * 0.18 - rect.top) / travel));
@@ -39,7 +39,7 @@
 
  const title=document.querySelector("[data-type-title]");
  if(!title)return;
- if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ if(window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
  const full=title.textContent;
  title.textContent="";
  title.setAttribute("aria-label",full);

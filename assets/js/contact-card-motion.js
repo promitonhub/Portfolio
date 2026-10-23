@@ -2,7 +2,13 @@
   const card = document.querySelector(".contact-panel");
   if (!card) return;
 
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const reducedMotion = {
+    get matches() { return window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : reducedMotionQuery.matches; },
+    addEventListener(type, callback) {
+      reducedMotionQuery.addEventListener?.(type, () => callback({ matches: reducedMotion.matches }));
+    }
+  };
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
   if (reducedMotion.matches || !finePointer.matches) return;
 
@@ -55,6 +61,6 @@
   window.addEventListener("blur", reset);
 
   // If the browser's motion or input preferences change mid-session, return to the base card.
-  reducedMotion.addEventListener?.("change", event => { if (event.matches) reset(); });
+  reducedMotion.addEventListener?.("change", () => { if (reducedMotion.matches) reset(); });
   finePointer.addEventListener?.("change", event => { if (!event.matches) reset(); });
 })();

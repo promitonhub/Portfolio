@@ -11,7 +11,7 @@
   const mobileStaticTitle = window.matchMedia("(max-width: 700px)").matches;
   if (mobileStaticTitle) return; // Mobile CSS deliberately uses the immediate static wordmark.
 
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reducedMotion = window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reducedMotion) return; // Delayed CSS fade brings in the static wordmark fallback.
 
   const COLS = 64;

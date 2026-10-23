@@ -36,6 +36,6 @@
   .contact-glow { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .contact-panel, .contact-glow { transition: none !important; }
-  .contact-panel[data-reveal] { will-change: auto; }
+  html:not([data-motion-mode="full"]) .contact-panel, html:not([data-motion-mode="full"]) .contact-glow{ transition: none !important; }
+  html:not([data-motion-mode="full"]) .contact-panel[data-reveal]{ will-change: auto; }
 }

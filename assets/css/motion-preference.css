@@ -1,0 +1,25 @@
+/* Opt-in motion control: shown only when reduced motion is requested or a site override is active. */
+.motion-preference-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--header-height, 54px);
+  padding: 0 11px;
+  border: 0;
+  border-left: 1px solid var(--line, rgba(232,235,240,.15));
+  background: transparent;
+  color: var(--muted, #96989a);
+  font: 600 8px/1 var(--mono, monospace);
+  letter-spacing: .06em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.motion-preference-toggle:hover,
+.motion-preference-toggle:focus-visible {
+  background: var(--invert-bg, #f0f0ec);
+  color: var(--invert-fg, #101113);
+  outline-offset: -3px;
+}
+@media (max-width: 700px) {
+  .motion-preference-toggle { display: none; }
+}

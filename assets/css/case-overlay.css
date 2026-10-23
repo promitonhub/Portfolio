@@ -153,7 +153,7 @@ body.case-overlay-open .site-header { pointer-events: none; }
   .case-overlay-close { width: 38px; height: 38px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .case-overlay, .case-overlay-panel, .case-overlay iframe, .case-overlay-close, .case-overlay-loading, .case-overlay-loading i::after { transition: none !important; animation: none !important; }
+  html:not([data-motion-mode="full"]) .case-overlay, html:not([data-motion-mode="full"]) .case-overlay-panel, html:not([data-motion-mode="full"]) .case-overlay iframe, html:not([data-motion-mode="full"]) .case-overlay-close, html:not([data-motion-mode="full"]) .case-overlay-loading, html:not([data-motion-mode="full"]) .case-overlay-loading i::after{ transition: none !important; animation: none !important; }
 }
 
 /* CV action and deliberately paced loading hand-off for all overlay documents. */
@@ -173,4 +173,4 @@ body.case-overlay-open .site-header { pointer-events: none; }
 @keyframes case-mark-breathe{from{opacity:.64;transform:translateY(1px)}to{opacity:1;transform:translateY(-2px)}}
 @media(max-width:900px){.case-overlay-actions{gap:9px}.case-overlay-save-pdf{padding:11px 10px;font-size:9px}.case-overlay-fullpage{display:none}}
 @media(max-width:520px){.case-overlay-actions{gap:7px}.case-overlay-save-pdf{padding:10px 8px;font-size:8px;letter-spacing:.025em}.case-overlay-save-pdf span{display:none}}
-@media(prefers-reduced-motion:reduce){.case-overlay-save-pdf,.case-overlay-stage iframe,.case-overlay-loading>span:nth-child(2){transition:none!important}.case-loading-mark{animation:none!important}}
+@media(prefers-reduced-motion:reduce){html:not([data-motion-mode="full"]) .case-overlay-save-pdf, html:not([data-motion-mode="full"]) .case-overlay-stage iframe, html:not([data-motion-mode="full"]) .case-overlay-loading>span:nth-child(2){transition:none!important}html:not([data-motion-mode="full"]) .case-loading-mark{animation:none!important}}

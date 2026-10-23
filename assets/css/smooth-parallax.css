@@ -33,9 +33,9 @@ body {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto !important; }
-  .smooth-parallax { translate: none !important; will-change: auto; }
-  .case-hero::after, .cv-sheet::before { transform: none !important; }
+  html:not([data-motion-mode="full"]){ scroll-behavior: auto !important; }
+  html:not([data-motion-mode="full"]) .smooth-parallax{ translate: none !important; will-change: auto; }
+  html:not([data-motion-mode="full"]) .case-hero::after, html:not([data-motion-mode="full"]) .cv-sheet::before{ transform: none !important; }
 }
 @media print {
   html { scroll-behavior: auto !important; }

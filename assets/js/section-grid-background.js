@@ -1,6 +1,6 @@
 /* Muted cursor-reactive grid cells for Profile, Selected Work and Approach. */
 (() => {
-  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+  const reduceMotion = window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false);
   const sections = [...document.querySelectorAll('#about, #work, #approach')];
   if (!sections.length) return;
 

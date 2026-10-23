@@ -96,5 +96,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .section-grid-canvas { display: none; }
+  html:not([data-motion-mode="full"]) .section-grid-canvas{ display: none; }
 }

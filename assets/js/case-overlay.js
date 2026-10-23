@@ -23,7 +23,7 @@
     'event-brand-communications.html': { number: '05', title: 'Event & Brand Communications' },
     'posm-planner.html': { number: '06', title: 'POSM Planner' }
   };
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduceMotion = window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const MIN_LOADING_MS = reduceMotion ? 0 : 260;
   let closeTimer = 0;
   let settleTimer = 0;

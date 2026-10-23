@@ -221,8 +221,8 @@
   .hero-ascii-art { font-size: 3px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-ascii-wrap::after { animation: none !important; }
-  .hero-ascii-art { transform: none !important; }
+  html:not([data-motion-mode="full"]) .hero-ascii-wrap::after{ animation: none !important; }
+  html:not([data-motion-mode="full"]) .hero-ascii-art{ transform: none !important; }
 }
 
 

@@ -176,5 +176,5 @@
   .scribble-note { right: 0; bottom: -12px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-stage > .ticker-band .ticker-track { animation: none !important; }
+  html:not([data-motion-mode="full"]) .hero-stage > .ticker-band .ticker-track{ animation: none !important; }
 }

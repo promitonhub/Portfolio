@@ -631,6 +631,6 @@ main, section, article, aside, nav, header, footer { min-width: 0; }
   .posm-visual-note { font-size: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .map-live i, .map-arrow, .crm-pulse, .glyph-monitor i, .system-link b { animation: none !important; }
-  .home-map-node, .system-stage, .system-channel, .system-outcome { transition: none !important; }
+  html:not([data-motion-mode="full"]) .map-live i, html:not([data-motion-mode="full"]) .map-arrow, html:not([data-motion-mode="full"]) .crm-pulse, html:not([data-motion-mode="full"]) .glyph-monitor i, html:not([data-motion-mode="full"]) .system-link b{ animation: none !important; }
+  html:not([data-motion-mode="full"]) .home-map-node, html:not([data-motion-mode="full"]) .system-stage, html:not([data-motion-mode="full"]) .system-channel, html:not([data-motion-mode="full"]) .system-outcome{ transition: none !important; }
 }

@@ -15,7 +15,7 @@
   const heroTiles = [...document.querySelectorAll(".hero-tile[data-parallax]")];
   const heroAscii = document.querySelector(".hero-ascii-art");
   const asciiParticleLayer = hero?.querySelector(".hero-ascii-particles");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduceMotion = window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let asciiState = null;
   let asciiProgress = 0;
   let asciiResizeFrame = 0;

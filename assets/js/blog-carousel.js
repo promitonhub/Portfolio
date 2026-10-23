@@ -12,7 +12,11 @@
   const bottom = carousel.querySelector(".blog-carousel-bottom");
   if (!viewport || !track || !group || !emptyCard || !status || !toggle || !bottom) return;
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const reduceMotion = {
+    get matches() { return window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : reduceMotionQuery.matches; },
+    addEventListener(type, callback) { reduceMotionQuery.addEventListener?.(type, callback); }
+  };
   const MAX_POSTS = 999;
   // BLOG CAROUSEL EDGE-RECYCLE BUFFER V1
   const VISIBLE_SLOTS = 9;

@@ -119,15 +119,15 @@
   .hero-stage { min-height: 740px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero { height: auto !important; min-height: 0 !important; }
-  .hero-stage {
+  html:not([data-motion-mode="full"]) .hero{ height: auto !important; min-height: 0 !important; }
+  html:not([data-motion-mode="full"]) .hero-stage{
     position: relative !important;
     top: auto !important;
     height: auto !important;
     min-height: max(760px, calc(100svh - var(--header-height))) !important;
   }
-  .hero-ascii-particles { display: none !important; }
-  .hero-ascii-art { visibility: visible !important; transform: none !important; }
+  html:not([data-motion-mode="full"]) .hero-ascii-particles{ display: none !important; }
+  html:not([data-motion-mode="full"]) .hero-ascii-art{ visibility: visible !important; transform: none !important; }
 }
 /* Fine desktop alignment: nudge the portrait slightly left without changing grid geometry. */
 @media (min-width: 901px) {

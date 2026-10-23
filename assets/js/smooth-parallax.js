@@ -2,7 +2,7 @@
    Native scrolling remains in control; only decorative/secondary layers use eased motion. */
 (() => {
   'use strict';
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduceMotion = window.portfolioShouldReduceMotion ? window.portfolioShouldReduceMotion() : window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));

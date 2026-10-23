@@ -4,6 +4,7 @@
 
   const lenis = new window.Lenis({
     autoRaf: true,
+    respectReducedMotion: document.documentElement.dataset.motionMode !== "full",
     anchors: true,
     smoothWheel: true,
     lerp: 0.085,
