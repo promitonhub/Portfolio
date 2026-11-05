@@ -8,6 +8,8 @@ reading_time: "7 min read"
 date: "2026-10-18"
 alt: "Minimal editorial illustration representing courses and learner records moving to a new learning platform."
 ---
+#
+[Read the original article](https://abmtechnologies.us/blog/lms-migration-timeline-guide)
 
 *When a learning platform changes, the things being moved are not just files. They are lessons someone prepared, progress someone earned, and routines that help a learning community find its way.*
 
