@@ -9,8 +9,6 @@ date: "2026-10-18"
 alt: "Minimal editorial illustration about healthcare information moving clearly between systems."
 ---
 
-# Healthcare Data Should Travel Without Losing Its Meaning
-
 *Behind every record is a person. The purpose of connecting healthcare systems is not to make data move faster for its own sake, but to help the right people understand what that data means.*
 
 A patient’s information can pass through many hands and many systems: a clinic, a laboratory, a hospital, a pharmacy, or a specialist. Each place may record a different part of the story. When those systems cannot communicate well, people may be asked to repeat information, staff may spend time searching for records, and important details can become harder to see.
