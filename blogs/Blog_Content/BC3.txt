@@ -8,6 +8,9 @@ reading_time: "7 min read"
 date: "2026-10-18"
 alt: "Minimal editorial illustration about healthcare information moving clearly between systems."
 ---
+#
+
+[Read the original article](https://abmtechnologies.us/blog/healthcare-interoperability-in-practice)
 
 *Behind every record is a person. The purpose of connecting healthcare systems is not to make data move faster for its own sake, but to help the right people understand what that data means.*
 
