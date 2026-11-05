@@ -9,8 +9,6 @@ date: "2026-10-18"
 alt: "Minimal editorial illustration representing courses and learner records moving to a new learning platform."
 ---
 
-# An LMS Migration Is a Change of Home for Learning
-
 *When a learning platform changes, the things being moved are not just files. They are lessons someone prepared, progress someone earned, and routines that help a learning community find its way.*
 
 An LMS migration can look straightforward from a distance: choose a destination, move the courses, and reopen the doors. Anyone who has supported a learning environment knows there is more to it. Courses contain different kinds of content. Assessments may behave differently from one platform to another. Learners have histories, instructors have established routines, and administrators need confidence that records remain accurate.
