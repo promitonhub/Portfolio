@@ -9,8 +9,6 @@ date: "2026-10-18"
 alt: "Minimal editorial illustration representing a considered choice between Open edX and Canvas."
 ---
 
-# Open edX or Canvas? Choose the Learning Experience You Want to Care For
-
 *Choosing a learning platform is a little like choosing a home for a community. The floor plan matters, but so do the people who will maintain it, the routines it should support, and the room it leaves for change.*
 
 Open edX and Canvas are both established learning platforms, but they invite different kinds of decisions. Open edX is an open-source platform often chosen by organisations that want substantial control over how a learning environment is built and operated. Canvas is a learning management system offered by Instructure, commonly adopted by educational institutions that value a structured platform and its surrounding ecosystem.
