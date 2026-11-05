@@ -8,6 +8,8 @@ reading_time: "7 min read"
 date: "2026-10-18"
 alt: "Minimal editorial illustration representing a considered choice between Open edX and Canvas."
 ---
+#
+[Read the original article](https://abmtechnologies.us/blog/open-edx-vs-canvas)
 
 *Choosing a learning platform is a little like choosing a home for a community. The floor plan matters, but so do the people who will maintain it, the routines it should support, and the room it leaves for change.*
 
