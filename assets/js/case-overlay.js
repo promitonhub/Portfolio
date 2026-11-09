@@ -15,6 +15,13 @@
   const profileTrigger = document.querySelector('[data-open-profile]');
   if (!overlay || !panel || !closeButton || !titleEl || !indexEl || !fullPageLink || !savePdfLink || !stage || !frame || !work) return;
 
+  frame.addEventListener('pointerenter', () => {
+    document.body.classList.add('case-overlay-pointer-inside');
+  });
+  frame.addEventListener('pointerleave', () => {
+    document.body.classList.remove('case-overlay-pointer-inside');
+  });
+
   const cases = {
     'b2b-demand-generation.html': { number: '01', title: 'B2B Demand Generation & Lead Activation' },
     'whitepaper-content-engine.html': { number: '02', title: 'Whitepaper Content Engine' },
@@ -175,10 +182,10 @@
     closing = true;
     overlay.classList.remove('is-open');
     overlay.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('case-overlay-open');
     const finish = () => {
       if (!closing) return;
       overlay.hidden = true;
+      document.body.classList.remove('case-overlay-open');
       closing = false;
       if (openerHadFocus && lastTrigger?.isConnected) lastTrigger.focus({ preventScroll: true });
       window.portfolioLenis?.start();

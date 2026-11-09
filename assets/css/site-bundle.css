@@ -4144,3 +4144,122 @@ html::-webkit-scrollbar {
     overflow: visible !important;
   }
 }
+
+
+/* BLOG CAROUSEL — CENTRE CONTENT / INDIVIDUAL IMAGE BLUR */
+
+/* Remove the viewport-level blur panels completely. */
+.blog-carousel-viewport::before,
+.blog-carousel-viewport::after {
+  display: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Blur the image itself, not the carousel viewport or card container. */
+.blog-carousel[data-smooth-motion="true"] .blog-card .blog-card-media img {
+  filter: saturate(.56) contrast(.94) brightness(.68)
+    blur(var(--blog-image-blur, 0px)) !important;
+  transform: scale(1.08);
+  transition: none !important;
+}
+
+/* Side cards show images only. All image labels follow centre proximity. */
+.blog-carousel[data-smooth-motion="true"] .blog-card .blog-card-media-index,
+.blog-carousel[data-smooth-motion="true"] .blog-card .blog-card-category {
+  opacity: var(--blog-content-opacity, 0) !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: none !important;
+}
+
+/* Reveal the complete text body only as its card reaches the centre. */
+.blog-carousel[data-smooth-motion="true"] .blog-card .blog-card-body {
+  opacity: var(--blog-content-opacity, 0) !important;
+  visibility: visible !important;
+  transform: translateY(var(--blog-body-y, 13px)) !important;
+  pointer-events: none;
+  transition: none !important;
+}
+
+.blog-carousel[data-smooth-motion="true"] .blog-card[data-distance="0"] .blog-card-body {
+  pointer-events: auto;
+}
+
+/* BLOG CAROUSEL — FIXED TEXT GEOMETRY ON ROTATING CARDS */ \
+.blog-carousel[data-smooth-motion="true"] .blog-card .blog-card-media-index,
+.blog-carousel[data-smooth-motion="true"] .blog-card .blog-card-category {
+  width: var(--blog-card-content-width, 100%) !important;
+  left: 50% !important;
+  right: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) !important;
+  pointer-events: none !important;
+}
+
+.blog-carousel[data-smooth-motion="true"] .blog-card .blog-card-body {
+  box-sizing: border-box !important;
+  width: var(--blog-card-content-width, 100%) !important;
+  max-width: none !important;
+  left: 50% !important;
+  right: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) !important;
+  pointer-events: none !important;
+}
+
+/* BLOG CAROUSEL — EDGE DISSOLVE */
+.blog-carousel[data-smooth-motion="true"] .blog-card {
+  border-color: color-mix(in srgb, var(--line-strong) calc(var(--blog-edge-opacity, 1) * 100%), transparent) !important;
+  box-shadow: 0 22px 52px rgba(0,0,0,calc(var(--blog-edge-opacity, 1) * .25)) !important;
+}
+.blog-carousel[data-smooth-motion="true"] .blog-card .blog-card-media img {
+  opacity: var(--blog-image-opacity, 1) !important;
+  filter: saturate(.56) contrast(.94) brightness(.68) blur(var(--blog-image-blur, 0px)) !important;
+  transform: scale(1.16) !important;
+}
+
+/* BLOG BACKGROUND — BLACK TOP GRADIENT + INVERTED ASCII EXPERIMENT */
+.blog-gradient-ascii {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.blog-gradient-ascii::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.58) 17%, rgba(0,0,0,.24) 36%, transparent 58%);
+}
+.blog-gradient-ascii::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.28) 22%, transparent 48%);
+  mix-blend-mode: difference;
+}
+
+/* BLOG — REMOVE INVERTED ASCII EXPERIMENT */
+.blog-gradient-ascii::after {
+  display: none !important;
+  mix-blend-mode: normal !important;
+}
+.blog-gradient-ascii::before {
+  display: block !important;
+  z-index: 1 !important;
+  background: linear-gradient(180deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.76) 14%, rgba(0,0,0,.48) 32%, rgba(0,0,0,.16) 52%, transparent 68%) !important;
+}
+
+/* BLOG — CAROUSEL EDGE FADE */
+.blog-carousel-viewport {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 2%, rgba(0,0,0,.25) 6%, black 15%, black 85%, rgba(0,0,0,.25) 94%, transparent 98%, transparent 100%) !important;
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 2%, rgba(0,0,0,.25) 6%, black 15%, black 85%, rgba(0,0,0,.25) 94%, transparent 98%, transparent 100%) !important;
+}

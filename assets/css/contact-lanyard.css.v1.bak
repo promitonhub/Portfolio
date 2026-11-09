@@ -1,0 +1,75 @@
+/* Contact lanyard layout — keeps the section header and existing panel intact. */
+#contact .contact-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(250px, .78fr) minmax(0, 1.22fr);
+  align-items: stretch;
+  gap: clamp(18px, 3.2vw, 54px);
+}
+#contact .contact-lanyard {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  min-height: 440px;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  touch-action: pan-y;
+}
+#contact .contact-lanyard-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  outline: none;
+  touch-action: pan-y;
+}
+#contact .contact-lanyard-hint {
+  position: absolute;
+  left: 8%;
+  bottom: 12px;
+  color: var(--faint);
+  font: 8px var(--mono);
+  letter-spacing: .14em;
+  pointer-events: none;
+}
+#contact .contact-lanyard-hint i { color: var(--accent); font-style: normal; }
+#contact .contact-panel {
+  z-index: 2;
+  width: 100%;
+  min-width: 0;
+  min-height: 440px;
+  margin: 0;
+}
+#contact .contact-lanyard-placeholder {
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  display: flex;
+  width: 172px;
+  height: 244px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(217,243,107,.38);
+  background: linear-gradient(145deg,#15251a,#08100b 72%);
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+  color: var(--ink);
+  font-family: var(--mono);
+}
+#contact .contact-lanyard-placeholder span { color: var(--accent); font: 800 36px var(--display); }
+#contact .contact-lanyard-placeholder b { font-size: 10px; letter-spacing: .12em; }
+#contact .contact-lanyard-placeholder small { color: var(--muted); font-size: 7px; letter-spacing: .1em; }
+@media (max-width: 900px) {
+  #contact .contact-inner { grid-template-columns: minmax(190px,.72fr) minmax(0,1.28fr); gap: 12px; }
+  #contact .contact-lanyard, #contact .contact-lanyard-canvas { min-height: 400px; }
+  #contact .contact-panel { min-height: 400px; }
+}
+@media (max-width: 700px) {
+  #contact .contact-inner { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  #contact .contact-lanyard { min-height: 300px; height: 300px; }
+  #contact .contact-lanyard-canvas { min-height: 300px; }
+  #contact .contact-lanyard-hint { left: 4%; bottom: 6px; }
+  #contact .contact-panel { min-height: 510px; }
+}

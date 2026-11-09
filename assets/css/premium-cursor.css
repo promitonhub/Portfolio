@@ -1,0 +1,49 @@
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html:has(.premium-cursor) {
+    cursor: none;
+  }
+  .premium-cursor {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .25s ease;
+    mix-blend-mode: normal;
+  }
+  .premium-cursor.is-visible { opacity: 1; }
+  .premium-cursor__dot,
+  .premium-cursor__ring {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    border-radius: 50%;
+    will-change: transform, width, height, background, border-color;
+  }
+  .premium-cursor__dot {
+    width: 5px;
+    height: 5px;
+    background: #d9f36b;
+  }
+  .premium-cursor__ring {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(217, 243, 107, .65);
+    background: rgba(217, 243, 107, .035);
+    transition: width .3s cubic-bezier(.2,.8,.2,1), height .3s cubic-bezier(.2,.8,.2,1), border-color .3s ease, background .3s ease;
+  }
+  .premium-cursor.is-hover .premium-cursor__ring {
+    width: 54px;
+    height: 54px;
+    border-color: rgba(217, 243, 107, .95);
+    background: rgba(217, 243, 107, .09);
+  }
+  .premium-cursor.is-pressed .premium-cursor__ring {
+    width: 27px;
+    height: 27px;
+  }
+  .premium-cursor.is-pressed .premium-cursor__dot {
+    transform: translate(-50%, -50%) scale(.7);
+  }
+}

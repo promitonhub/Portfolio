@@ -24,7 +24,8 @@
 
 
 
-  <script src="assets/js/ascii-dissolve.js" defer></script>
+  <link rel="stylesheet" href="assets/css/hero-background.css">
+<script src="assets/js/ascii-dissolve.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/section-grid-background.js" defer></script>
   <script src="assets/js/case-overlay.js" defer></script>
@@ -185,6 +186,13 @@
   <link rel="stylesheet" href="/assets/css/mobile-ux.css?v=20261023">
   <script src="/assets/js/mobile-ux.js?v=20261023" defer></script>
   <link rel="stylesheet" href="/assets/css/mobile-ux-correction.css?v=20261023-5">
+  <link rel="stylesheet" href="assets/css/target-cursor.css">
+  <script src="assets/js/target-cursor.js" defer></script>
+  <link rel="stylesheet" href="assets/css/hero-silk.css">
+  <script src="assets/js/hero-silk.js" defer></script>
+  <link rel="stylesheet" href="assets/css/work-line-waves.css">
+  <link rel="stylesheet" href="assets/css/blog-gradient-ascii.css">
+  <script src="assets/js/blog-gradient-ascii.js" defer></script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
@@ -236,7 +244,8 @@
   <main id="main">
     <section class="hero" id="home" data-section="home">
       <div class="hero-stage">
-      <div class="hero-canvas" aria-hidden="true">
+      <div id="hero-silk" class="hero-silk-layer" aria-hidden="true"><canvas></canvas></div>
+<div class="hero-canvas" aria-hidden="true">
         <div class="hero-grid-lines"></div>
         <div class="hero-orbit orbit-blue"></div><div class="hero-orbit orbit-green"></div><div class="hero-orbit orbit-red"></div><div class="hero-orbit orbit-dashed"></div>
         <div class="hero-tile tile-01" data-parallax=".12"><div class="tile-motion"><div class="mini-screen screen-film"><i></i><i></i><b>FIELD NOTES / 01</b></div></div></div>
@@ -364,9 +373,7 @@
     </section>
 
     <section class="work section-block" id="work" data-section="02">
-      <div class="section-grid-base" aria-hidden="true"></div>
-      <canvas class="section-grid-canvas" aria-hidden="true"></canvas>
-      <div class="section-grid-matte" aria-hidden="true"></div>
+      <div class="work-line-waves" aria-hidden="true"><canvas></canvas></div>
       <div class="section-bar"><span>02 / SELECTED WORK</span><span>VERIFIABLE CONTRIBUTIONS</span><span>PORTFOLIO INDEX — 06</span></div>
       <div class="work-heading section-inner" data-reveal><div><p class="kicker">REAL WORK · PRIVATE DETAILS LEFT OUT</p><h2>Here’s what I’ve worked on.</h2></div><p class="heading-note">Real work, with private details left out.</p></div>
       <div class="project-grid section-inner">
@@ -462,8 +469,7 @@
     </section>
 
     <section class="blog section-block" id="blog" data-section="04" aria-labelledby="blog-title">
-      <div class="section-grid-base" aria-hidden="true"></div>
-      <div class="section-grid-matte" aria-hidden="true"></div>
+      <div class="blog-gradient-ascii" aria-hidden="true"><canvas></canvas></div>
       <div class="section-bar"><span>04 / BLOG</span><span>FIELD NOTES / ORIGINAL WRITING</span><span>POST INDEX — 00</span></div>
       <div class="blog-heading section-inner" data-reveal>
         <div class="blog-heading-copy">
@@ -553,5 +559,6 @@
       </div>
     </div>
   </section>
+  <script src="assets/js/work-line-waves.js" defer></script>
 </body>
 </html>

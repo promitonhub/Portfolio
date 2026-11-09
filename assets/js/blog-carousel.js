@@ -609,13 +609,21 @@
       const tilt = mix(a.tilt, b.tilt, t) * (distance < 0 ? 1 : -1);
 
       node.dataset.distance = String(Math.round(distance));
+      node.style.setProperty("--blog-card-content-width", `${centerBasis}px`);
       node.style.setProperty("--blog-flex", `${grow.toFixed(4)} 1 ${basis.toFixed(2)}px`);
       node.style.setProperty("--blog-opacity", opacity.toFixed(4));
       node.style.setProperty("--blog-scale", scale.toFixed(4));
       node.style.setProperty("--blog-rotate", `${tilt.toFixed(3)}deg`);
-      const bodyOpacity = clampMotion(1 - absDistance / 1.08, 0, 1);
+      const bodyOpacity = clampMotion(1 - absDistance / 0.42, 0, 1);
+      const imageBlur = Math.pow(absDistance / 4, 1.25) * 24;
+      const imageOpacity = clampMotion(1 - absDistance / 4, 0, 1);
+      const edgeOpacity = clampMotion(1 - Math.max(0, absDistance - 1) / 3, 0, 1);
       const overlayOpacity = clampMotion(1 - absDistance * 0.14, 0.42, 1);
       node.style.setProperty("--blog-body-opacity", bodyOpacity.toFixed(4));
+      node.style.setProperty("--blog-content-opacity", bodyOpacity.toFixed(4));
+      node.style.setProperty("--blog-image-blur", `${imageBlur.toFixed(2)}px`);
+      node.style.setProperty("--blog-image-opacity", imageOpacity.toFixed(4));
+      node.style.setProperty("--blog-edge-opacity", edgeOpacity.toFixed(4));
       node.style.setProperty("--blog-body-y", `${((1 - bodyOpacity) * 13).toFixed(2)}px`);
       node.style.setProperty("--blog-card-overlay-opacity", overlayOpacity.toFixed(4));
       node.style.zIndex = absDistance < 0.55 ? "5" : "1";

@@ -1,0 +1,5 @@
+# Install the scroll-driven 3D contact hands (fish shell)
+cd ~/Sites/Portfolio
+unzip -o ~/Downloads/contact-hands-patch.zip -d .
+sed -i '/<\/head>/i\  <link rel="stylesheet" href="/assets/css/contact-hands.css">' index.html
+sed -i '/<\/body>/i\  <script src="/assets/js/contact-hands.js" defer></script>' index.html

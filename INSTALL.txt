@@ -1,0 +1,12 @@
+SILK HERO BACKGROUND PATCH
+
+Copy assets/js/hero-silk.js and assets/css/hero-silk.css into the matching folders.
+
+Add this as the FIRST child inside <div class="hero-stage">, before .hero-canvas:
+<div id="hero-silk" class="hero-silk-layer" aria-hidden="true"><canvas></canvas></div>
+
+Add these references alongside the existing CSS and deferred JS references in index.html:
+<link rel="stylesheet" href="assets/css/hero-silk.css">
+<script src="assets/js/hero-silk.js" defer></script>
+
+This is a vanilla JavaScript port of the uploaded Silk shader. No React dependency is added. Keep hero-background.css as the dark fallback.
